@@ -1,8 +1,18 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
+const logger = require('morgan');
 const app = express();
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser")
+
+app.use(express.static('public'));
+app.use(logger("dev"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended : true }  ))
+
 
 // Set Mongoose DB URI
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://haz3141:Pw3141!@ds241278.mlab.com:41278/heroku_pjvjkvk7";
@@ -14,6 +24,7 @@ mongoose
     useUnifiedTopology: true
   })
   .then(console.log("DB CONNECTED: ", MONGODB_URI));
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -36,10 +47,11 @@ const { User } = require('./models');
 // POST route to register a user
 app.post('/api/register', function(req, res) {
   
-  console.log("req.body = ", req.body)
+  console.log("req = ", req)
   const { email, password } = req.body;
 
   const user = new User({ email, password });
+  
   user.save(function(err) {
     if (err) {
       res.status(500)

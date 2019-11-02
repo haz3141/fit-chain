@@ -11,6 +11,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Home from "./Home";
 import Secret from "./components/Secret";
+import SignIn from "./pages/SignIn"
 
 class App extends Component {
   // api routes
@@ -21,9 +22,11 @@ class App extends Component {
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/secret">Secret</Link></li>
+          <li><Link to="/api/register">Users</Link></li>
         </ul>
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/api/register" component={SignIn} />
           <Route path="/secret" component={Secret} />
         </Switch>
       </div>
