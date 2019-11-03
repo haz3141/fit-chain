@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 // Import Components
-import { Home } from './components/Home';
-import Secret from './components/Secret';
+import { Home } from "./components/Home";
+import Secret from "./components/Secret";
+import { Login } from "./components/Login";
+import { WithAuth } from "./components/WithAuth";
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard/index';
-import { Login } from './components/Login';
-import { WithAuth } from './components/WithAuth';
 
 class App extends Component {
 	render() {
