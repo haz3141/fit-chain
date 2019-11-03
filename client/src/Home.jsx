@@ -1,6 +1,6 @@
-import { Component } from "react";
+import React, { Component } from "react";
 
-export default class Secret extends Component {
+export default class Home extends Component {
   constructor() {
     super();
     // Sets Default Message
@@ -11,7 +11,7 @@ export default class Secret extends Component {
 
   componentDidMount() {
     // GET Message from Server Using Fetch API
-    fetch("/api/secret")
+    fetch("/api/home")
       .then(res => res.text())
       .then(res => this.setState({
         message: res
@@ -21,7 +21,7 @@ export default class Secret extends Component {
   render() {
     return (
       <div>
-        <h1>Secret</h1>
+        <h1>Home</h1>
         <p>{this.state.message}</p>
       </div>
     );

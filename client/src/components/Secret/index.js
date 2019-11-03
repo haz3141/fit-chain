@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-export default class Secret extends Component {
+
+class Secret extends Component {
   constructor() {
     super();
     //Set default message
@@ -7,12 +8,14 @@ export default class Secret extends Component {
       message: 'Loading...'
     }
   }
+  
   componentDidMount() {
     //GET message from server using fetch api
     fetch('/api/secret')
       .then(res => res.text())
       .then(res => this.setState({message: res}));
   }
+
   render() {
     return (
       <div>
@@ -22,3 +25,5 @@ export default class Secret extends Component {
     );
   }
 }
+
+export default Secret;

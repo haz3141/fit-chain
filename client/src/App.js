@@ -1,23 +1,33 @@
 // Import Dependencies
 import React, { Component } from "react";
-import { Link, Route, Switch } from "react-router-dom";
-import Home from "./Home";
-import Secret from "./Secret";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-export default class App extends Component {
+// Import Components
+import Home from "./components/Home";
+import Secret from "./components/Secret";
+
+class App extends Component {
   render() {
     return (
-      <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/secret">Secret</Link></li>
-        </ul>
-        
-        <Switch>
-          <Route path="/" exact Component={Home} />
-          <Route path="/secret" Component={Secret} />
-        </Switch>
-      </div>
+      <Router>
+        <div>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/secret">Secret</Link></li>
+          </ul>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/secret" component={Secret} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
+
+export default App;
