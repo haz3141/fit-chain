@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Home } from "./components/Home";
 import Secret from "./components/Secret";
 import { Login } from "./components/Login";
-import { WithAuth } from "./components/WithAuth";
+import { withAuth } from "./components/withAuth";
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard/index';
@@ -40,8 +40,8 @@ class App extends Component {
 						<Route path="/" exact component={Home} />
 						<Route path="/signup" component={SignUp} />
 						<Route path="/login" component={Login} />
-						<Route path="/dashboard" component={WithAuth(Dashboard)} />
-						<Route path="/secret" component={WithAuth(Secret)} />
+						<Route path="/dashboard" component={withAuth(Dashboard)} />
+						<Route path="/secret" component={withAuth(Secret)} />
 						<Route path="/api/register" component={SignIn} />
 					</Switch>
 				</div>
