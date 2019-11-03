@@ -41,11 +41,11 @@ app.get('/api/secret', function(req, res) {
   res.send('The password is potato');
 });
 
-// POST Route ?? API Test
+// POST Route to Register User ?? API Test
 app.post('/api/register', function(req, res) {
   const { email, password } = req.body;
   const user = new User({ email, password });
-
+  
   user.save(function(err) {
     if (err) {
       res.status(500)
