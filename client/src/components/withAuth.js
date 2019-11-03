@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 
-function WithAuth(ComponentToProtect) {
+function withAuth(ComponentToProtect) {
   return class extends Component {
     constructor() {
       super();
@@ -50,4 +50,4 @@ function WithAuth(ComponentToProtect) {
   }
 }
 
-export { WithAuth };
+export { withAuth };
