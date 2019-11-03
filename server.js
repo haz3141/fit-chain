@@ -50,6 +50,11 @@ app.get("/api/secret", withAuth, function(req, res) {
   res.send("The password is potato!");
 });
 
+// GET Route !! Token Check API Test
+app.get("/checkToken", withAuth, function(req, res) {
+  res.sendStatus(200);
+});
+
 // POST Route to Register User !! API Test
 app.post("/api/register", function(req, res) {
   const { email, password } = req.body;
