@@ -47,16 +47,6 @@ app.get("/api/home", function(req, res) {
   res.send("Welcome!");
 });
 
-<<<<<<< HEAD
-// Import our User schema
-const { User } = require('./models');
-// console.log({User})
-
-// POST route to register a user
-app.post('/api/register', function(req, res) {
-  
-  // console.log("req = ", req)
-=======
 // GET Route !! Authenticated API Test
 app.get("/api/secret", withAuth, function(req, res) {
   res.send("The password is potato!");
@@ -69,7 +59,6 @@ app.get("/checkToken", withAuth, function(req, res) {
 
 // POST Route to Register User !! API Test
 app.post("/api/register", function(req, res) {
->>>>>>> 2f0191bd75355f87c4d01d61c9bad4787cf21ffe
   const { email, password } = req.body;
   const user = new User({ email, password });
   
