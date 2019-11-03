@@ -1,25 +1,28 @@
-// Import Dependencies ?? Refactor
+// Import Dependencies !! Refactor
 const express = require("express");
 const path = require("path");
 const logger = require('morgan');
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
+const withAuth = require("./middleware/withAuth");
 
 // Set Port & Instantiate Express
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-// Import User Model ?? Remove
+// Import User Model !! Remove
 const { User } = require('./models');
 
-// Define Token Signing Key ?? Remove & Change
+// Define Token Signing Key !! Remove & Change
 const secret = "theSecretString3141";
 
-// Configure Express Server ?? Refactor
+// Configure Express Server
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(logger("dev"));
+app.use(cookieParser());
 
 // Set MongoDB Path
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://haz3141:Pw3141!@ds241278.mlab.com:41278/heroku_pjvjkvk7";
@@ -37,15 +40,17 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// GET Routes ?? API Test
+// GET Route !! API Test
 app.get("/api/home", function(req, res) {
   res.send("Welcome!");
 });
-app.get("/api/secret", function(req, res) {
+
+// GET Route !! Authenticated API Test
+app.get("/api/secret", withAuth, function(req, res) {
   res.send("The password is potato!");
 });
 
-// POST Route to Register User ?? API Test
+// POST Route to Register User !! API Test
 app.post("/api/register", function(req, res) {
   const { email, password } = req.body;
   const user = new User({ email, password });
@@ -60,7 +65,7 @@ app.post("/api/register", function(req, res) {
   });
 });
 
-// POST Route to Authenticate User ?? API Test
+// POST Route to Authenticate User !! API Test
 app.post("/api/authenticate", function(req, res) {
   const { email, password } = req.body;
   User.findOne({ email }, function(err, user) {
