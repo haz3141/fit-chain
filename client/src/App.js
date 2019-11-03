@@ -11,6 +11,7 @@ import {
 import Home from "./components/Home";
 import Secret from "./components/Secret";
 import Login from "./components/Login";
+import withAuth from "./components/withAuth";
 
 class App extends Component {
   render() {
@@ -24,7 +25,7 @@ class App extends Component {
           </ul>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/secret" component={Secret} />
+            <Route path="/secret" component={withAuth(Secret)} />
             <Route path="/login" component={Login} />
           </Switch>
         </div>
