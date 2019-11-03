@@ -1,18 +1,23 @@
 import React, { Component } from "react";
-export default class Home extends Component {
+
+class Home extends Component {
   constructor() {
     super();
-    //Set default message
+    // Sets Default Message
     this.state = {
-      message: 'Loading...'
+      message: "Loading..."
     }
   }
+
   componentDidMount() {
-    //GET message from server using fetch api
-    fetch('/api/home')
+    // GET Message from Server Using Fetch API
+    fetch("/api/home")
       .then(res => res.text())
-      .then(res => this.setState({message: res}));
+      .then(res => this.setState({
+        message: res
+      }));
   }
+
   render() {
     return (
       <div>
@@ -22,3 +27,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export { Home };
