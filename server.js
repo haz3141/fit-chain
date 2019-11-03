@@ -7,11 +7,11 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser")
 
 app.use(express.static('public'));
-app.use(logger("dev"));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+app.use(bodyParser.urlencoded({ extended : false }  ))
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended : true }  ))
+app.use(logger("dev"));
 
 
 // Set Mongoose DB URI
@@ -41,15 +41,13 @@ app.get('/api/secret', function(req, res) {
 
 // Import our User schema
 const { User } = require('./models');
-
 // console.log({User})
 
 // POST route to register a user
 app.post('/api/register', function(req, res) {
   
-  console.log("req = ", req)
+  // console.log("req = ", req)
   const { email, password } = req.body;
-
   const user = new User({ email, password });
   
   user.save(function(err) {

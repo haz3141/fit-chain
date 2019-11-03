@@ -12,6 +12,8 @@ import "./App.css";
 import Home from "./Home";
 import Secret from "./components/Secret";
 import SignIn from "./pages/SignIn"
+import SignUp from "./pages/SignUp"
+import Dashboard from "./pages/Dashboard/index"
 
 class App extends Component {
   // api routes
@@ -22,12 +24,16 @@ class App extends Component {
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/secret">Secret</Link></li>
+          <li><Link to="/signup">Sign Up!</Link></li>
           <li><Link to="/api/register">Users</Link></li>
+          <li><Link to="/dashboard">Dashboard</Link></li>
         </ul>
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/signup" component={SignUp} />
           <Route path="/api/register" component={SignIn} />
           <Route path="/secret" component={Secret} />
+          <Route path="/dashboard" component={Dashboard} />
         </Switch>
       </div>
       </Router>
