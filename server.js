@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// GET Routes ?? Test
+// GET Routes ?? API Test
 app.get('/api/home', function(req, res) {
   res.send('Welcome!');
 });
@@ -41,7 +41,7 @@ app.get('/api/secret', function(req, res) {
   res.send('The password is potato');
 });
 
-// POST Route ?? Test
+// POST Route ?? API Test
 app.post('/api/register', function(req, res) {
   const { email, password } = req.body;
   const user = new User({ email, password });
