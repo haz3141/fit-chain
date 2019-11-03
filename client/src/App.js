@@ -8,10 +8,10 @@ import {
 } from "react-router-dom";
 
 // Import Components
-import Home from "./components/Home";
+import { Home } from "./components/Home";
 import Secret from "./components/Secret";
-import Login from "./components/Login";
-import withAuth from "./components/withAuth";
+import { Login } from "./components/Login";
+import { WithAuth } from "./components/WithAuth";
 
 class App extends Component {
   render() {
@@ -25,7 +25,7 @@ class App extends Component {
           </ul>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/secret" component={withAuth(Secret)} />
+            <Route path="/secret" component={WithAuth(Secret)} />
             <Route path="/login" component={Login} />
           </Switch>
         </div>
@@ -34,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export { App };

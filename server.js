@@ -7,6 +7,11 @@ const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const withAuth = require("./middleware/withAuth");
 
+// Set Protected Environment Variables
+// Define Token Signing Key
+require("dotenv").config();
+const secret = process.env.SECRET_KEY;
+
 // Set Port & Instantiate Express
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -14,10 +19,7 @@ const app = express();
 // Import User Model !! Remove
 const { User } = require('./models');
 
-// Define Token Signing Key !! Remove & Change
-const secret = "theSecretString3141";
-
-// Configure Express Server
+// Configure Express Server Middleware
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -33,7 +35,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
-  .then(console.log("DB CONNECTED: ", MONGODB_URI));
+  .then(console.log("DB CONNECTED: ", MONGODB_URI)); // Catch error !! CB or .catch()
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
