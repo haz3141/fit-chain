@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const logger = require('morgan');
 const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
 
 // Set Port & Instantiate Express
 const PORT = process.env.PORT || 3001;
@@ -10,6 +11,9 @@ const app = express();
 
 // Import User Model ?? Remove
 const { User } = require('./models');
+
+// Define Token Signing Key ?? Remove & Change
+const secret = "theSecretString3141";
 
 // Configure Express Server ?? Refactor
 app.use(express.static('public'));
@@ -34,15 +38,15 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // GET Routes ?? API Test
-app.get('/api/home', function(req, res) {
-  res.send('Welcome!');
+app.get("/api/home", function(req, res) {
+  res.send("Welcome!");
 });
-app.get('/api/secret', function(req, res) {
-  res.send('The password is potato');
+app.get("/api/secret", function(req, res) {
+  res.send("The password is potato!");
 });
 
 // POST Route to Register User ?? API Test
-app.post('/api/register', function(req, res) {
+app.post("/api/register", function(req, res) {
   const { email, password } = req.body;
   const user = new User({ email, password });
   
@@ -52,6 +56,45 @@ app.post('/api/register', function(req, res) {
         .send("Error registering new user please try again.");
     } else {
       res.status(200).send("Welcome to the club!");
+    }
+  });
+});
+
+// POST Route to Authenticate User ?? API Test
+app.post("/api/authenticate", function(req, res) {
+  const { email, password } = req.body;
+  User.findOne({ email }, function(err, user) {
+    if (err) {
+      console.error(err);
+      res.status(500).json({
+        error: "Internal error please try again."
+      });
+    } else if (!user) {
+      res.status(401).json({
+        error: "Incorrect email or password."
+      });
+    } else {
+      user.isCorrectPassword(password, function(err, same) {
+        if (err) {
+          res.status(500).json({
+            error: "Internal error please try again."
+          });
+        } else if (!same) {
+          res.status(401).json({
+            error: "Incorrect email or password."
+          });
+        } else {
+          // Issue JWT
+          const payload = { email };
+          const token = jwt
+            .sign(payload, secret, {
+              expiresIn: "1h"
+            });
+          res.cookie("token", token, {
+            httpOnly: true
+          }).sendStatus(200);
+        }
+      });
     }
   });
 });
