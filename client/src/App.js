@@ -11,7 +11,7 @@ import {
 import { Home } from "./components/Home";
 import Secret from "./components/Secret";
 import { Login } from "./components/Login";
-import { withAuth } from "./components/WithAuth";
+import { withAuth } from "./components";
 
 class App extends Component {
   render() {

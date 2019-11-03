@@ -20,11 +20,12 @@ const app = express();
 const { User } = require('./models');
 
 // Configure Express Server Middleware
-app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(logger("dev"));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Set MongoDB Path
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://haz3141:Pw3141!@ds241278.mlab.com:41278/heroku_pjvjkvk7";
