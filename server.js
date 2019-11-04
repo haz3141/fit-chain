@@ -20,23 +20,23 @@ const app = express();
 const { User } = require('./models');
 
 // Configure Express Server Middleware
-// app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.static("public"));
 app.use(logger("dev"));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 // Set MongoDB Path
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://haz3141:Pw3141!@ds241278.mlab.com:41278/heroku_pjvjkvk7";
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Connect MongoDB
 mongoose
   .connect(MONGODB_URI, {
+    useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
-  .then(console.log("DB CONNECTED: ", MONGODB_URI)); // Catch error !! CB or .catch()
+  .then(console.log("(>^_^)> ==> MongoDB Connection Successful!")); // Catch error !! CB or .catch()
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -120,5 +120,5 @@ app.get("*", function(req, res) {
 
 // Start Express Listener
 app.listen(PORT, function() {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+  console.log(`(>^_^)> ==> API server now on port ${PORT}!`);
 });
