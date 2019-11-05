@@ -1,24 +1,46 @@
 // Import Dependencies
 import React, { Component, Fragment } from 'react';
-// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Links } from './Links'
 
 import { Header, Footer } from './Layouts';
-import Exercies from './Exercises';
+import Exercises from './Exercises';
+import { muscles, exercises } from '../store';
 
 class App extends Component {
+	state = {
+		exercises
+	};
+
+	getExercisesByMuscles() {
+		return Object.entries(
+			this.state.exercises.reduce((exercises, exercise) => {
+				const { muscles } = exercise;
+
+				exercises[muscles] = exercises[muscles] ? [ ...exercises[muscles], exercise ] : [ exercise ];
+
+				return exercises;
+			}, {})
+		);
+	}
+	handleCategorySelected = category => {
+		this.setState({
+			category
+		})
+	}
+
+	// console.log(this.getExercisesByMuscles())
 	render() {
+		const exercises = this.getExercisesByMuscles();
+		const { category } = this.state
+
 		return (
 			<div>
 				<Fragment>
 					<Header />
-					<Exercies />
-					<Footer />
+
+					<Exercises category={category} exercises={exercises} />
+
+					<Footer category={category} muscles={muscles} onSelect={this.handleCategorySelected}/>
 				</Fragment>
-				<Router>
-					<Links/>
-				</Router>
 			</div>
 		);
 	}
