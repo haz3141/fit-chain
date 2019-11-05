@@ -48,6 +48,11 @@ app.get("/api/home", function(req, res) {
   res.send("Welcome!");
 });
 
+// GET Route !! API Test
+app.get("/api/landing", function(req, res) {
+  res.send("Landing Page!");
+});
+
 // GET Route !! Authenticated API Test
 app.get("/api/secret", withAuth, function(req, res) {
   res.send("The password is potato!");

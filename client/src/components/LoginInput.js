@@ -1,7 +1,7 @@
 // Import Dependencies
 import React, { Component } from 'react';
 
-class Login extends Component {
+class LoginInput extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -66,4 +66,4 @@ class Login extends Component {
 	}
 }
 
-export { Login };
+export { LoginInput };
