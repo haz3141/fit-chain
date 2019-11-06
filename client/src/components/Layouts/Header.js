@@ -3,9 +3,9 @@ import { AppBar, Toolbar } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
-// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { Links } from '../Links'
+
+import Create from '../Exercises/Dialogs/Create'
 
 // import IconButton from '@material-ui/core/IconButton';
 // import MenuIcon  from '@material-ui/icons/MenuIcon'
@@ -19,11 +19,12 @@ import { Links } from '../Links'
 export default (props) => (
 	<AppBar position="static">
 		<Toolbar>
-			<Typography variant="h6">Bars Bars Bars</Typography>
-			<Button color="primary">Login</Button>
-			<Router>
+			<Typography variant="h6" color="inherit" style={{ flex: 1 }} >Workout Nav Bar</Typography>
+			<Button color="inherit">Login</Button>
+
 				<Links />
-			</Router>
+
+			<Create/>
 		</Toolbar>
 	</AppBar>
 );

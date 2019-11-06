@@ -19,7 +19,7 @@ export default ({ muscles, category, onSelect }) => {
 				centered
 			>
 				<Tab label="All" />
-				{muscles.map((group) => <Tab label={group} />)}
+				{muscles.map((group) => <Tab key={group} label={group} />)}
 			</Tabs>
 		</Paper>
 	);
