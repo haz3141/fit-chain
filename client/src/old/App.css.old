@@ -1,20 +1,4 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.4;
-}
-
-a {
-  color: #333;
-  text-decoration: none;
-} */
-
-/* .App {
+.App {
   text-align: center;
 }
 
@@ -37,4 +21,4 @@ a {
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-} */
+}
