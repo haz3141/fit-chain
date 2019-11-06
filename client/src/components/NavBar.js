@@ -1,15 +1,34 @@
-import { AppBar, Toolbar } from '@material-ui/core';
+// import { AppBar, Toolbar } from '@material-ui/core';
 // import { Toolbar } from '@material-ui/core';
+import React, { Component } from 'react';
 
+class Navbar extends Component {
+	constructor() {
+		super();
+		// Sets Default Message
+		this.state = {
+			message: 'Loading...'
+		};
+	}
 
-<AppBar position="static">
-  <Toolbar>
-    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-      <MenuIcon />
-    </IconButton>
-    <Typography variant="h6" className={classes.title}>
-      News
-    </Typography>
-    <Button color="inherit">Login</Button>
-  </Toolbar>
-</AppBar>
+	componentDidMount() {
+		// GET Message from Server Using Fetch API
+		fetch('/api/Navbar').then((res) => res.text()).then((res) =>
+			this.setState({
+				message: res
+			})
+		);
+	}
+
+	render() {
+		return (
+			<div>
+				
+				<h1>Navbar</h1>
+				<p>{this.state.message}</p>
+			</div>
+		);
+	}
+}
+
+export { Navbar };
