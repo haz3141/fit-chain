@@ -19,8 +19,8 @@ const styles = {
 
 const Body = () => (
 	<Grid container direction="row" justify="center" alignItems="center">
-		<Grid container item>
-      <h1>Grid</h1>
+		<Grid container item sm>
+      
 		</Grid>
 	</Grid>
 );

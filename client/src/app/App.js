@@ -8,6 +8,7 @@ import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Secret } from "../pages/Secret";
 import { Dashboard } from "../pages/Dashboard";
+import { Exercise } from "../views/Exercise";
 
 // Import Components
 // import { Links } from "./components/Links";
@@ -30,6 +31,7 @@ class App extends Component {
                 <Route path="/secret" component={withAuth(Secret)} />
                 <Route path="/login" component={Login} />
                 <Route path="/dashboard" component={withAuth(Dashboard)} />
+                <Route path="/exercise" component={Exercise} />
               </Switch>
 						</React.Fragment>
 				</div>
