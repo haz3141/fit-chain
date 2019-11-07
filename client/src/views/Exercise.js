@@ -1,6 +1,6 @@
 // Import React Modules
 import React, { Component, Fragment } from "react";
-import { Switch, Route } from 'react-router-dom';
+// import { Switch, Route } from 'react-router-dom';
 
 // Import Layouts
 import { Header } from "../layouts/Header";
