@@ -1,16 +1,17 @@
-import React from 'react';
+// Import React
+import React from "react";
+
+// Import Material-UI Components
 import { Paper, Tab, Tabs } from '@material-ui/core';
 
-// className={classes.root} // onChange={handleChange}
-
-export default ({ muscles, category, onSelect }) => {
-	const index = category ? muscles.findIndex((group) => group === category) + 1 : 0;
+function ExerciseFooter({ muscles, category, onSelect }) {
+  const index = category ? muscles.findIndex((group) => group === category) + 1 : 0;
 	const onIndexSelect = (e, index) => {
 		onSelect(index === 0 ? '' : muscles[index - 1]);
 	}
 
-	return (
-		<Paper>
+  return (
+    <Paper>
 			<Tabs
 				value={index}
 				onChange={onIndexSelect}
@@ -22,5 +23,7 @@ export default ({ muscles, category, onSelect }) => {
 				{muscles.map((group) => <Tab key={group} label={group} />)}
 			</Tabs>
 		</Paper>
-	);
-};
+  );
+}
+
+export { ExerciseFooter };

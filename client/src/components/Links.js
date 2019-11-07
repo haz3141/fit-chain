@@ -10,10 +10,12 @@ class Links extends Component {
 		return (
 			<React.Fragment>
 					<Link to="/">Home</Link>
-					<Link to="/landing">Landing</Link>
 					<Link to="/login">Login</Link>
-					<Link to="/signup">Sign Up!</Link>
+          <Link to="/secret">Secret</Link>
 					<Link to="/dashboard">Dashboard</Link>
+          <Link to="/exercise">Exercise</Link>
+					{/* <Link to="/signup">Sign Up!</Link> */}
+					{/* <Link to="/landing">Landing</Link> */}
 			</React.Fragment>
 		);
 	}
