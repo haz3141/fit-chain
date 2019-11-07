@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Links } from "../components/Links"
+
 class Secret extends Component {
   constructor() {
     super();
@@ -17,6 +19,7 @@ class Secret extends Component {
   render() {
     return (
       <div>
+        <Links />
         <h1>Secret</h1>
         <p>{this.state.message}</p>
       </div>

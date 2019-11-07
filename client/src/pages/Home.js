@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { Links } from "../components/Links"
+
 class Home extends Component {
   constructor() {
     super();
@@ -21,6 +23,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <Links />
         <h1>Home</h1>
         <p>{this.state.message}</p>
       </div>

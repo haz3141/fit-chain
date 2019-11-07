@@ -4,15 +4,16 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom';
 
 // Import Pages
-import { Home } from "./pages/Home";
-import { Login } from "./pages/Login";
-import { Secret } from "./pages/Secret";
+import { Home } from "../pages/Home";
+import { Login } from "../pages/Login";
+import { Secret } from "../pages/Secret";
+import { Dashboard } from "../pages/Dashboard";
 
 // Import Components
-import { Links } from "./components/Links";
+// import { Links } from "./components/Links";
 
 // Import Utils
-import { withAuth } from "./utils/withAuth";
+import { withAuth } from "../utils/withAuth";
 
 // Import Class Assets
 import "./App.css";
@@ -24,11 +25,11 @@ class App extends Component {
       <Router>
         <div className="App">
 						<React.Fragment>
-							<Links />
 							<Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/secret" component={withAuth(Secret)} />
                 <Route path="/login" component={Login} />
+                <Route path="/dashboard" component={withAuth(Dashboard)} />
               </Switch>
 						</React.Fragment>
 				</div>
@@ -37,5 +38,5 @@ class App extends Component {
   }
 }
 
-// Export App [DESTRUCTURE]
-export default App;
+// Export App
+export { App };

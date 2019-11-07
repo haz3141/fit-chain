@@ -1,5 +1,7 @@
 // Import Dependencies
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+
+import { Links } from "../components/Links"
 
 class Login extends Component {
 	constructor(props) {
@@ -42,26 +44,30 @@ class Login extends Component {
 
 	render() {
 		return (
-			<form onSubmit={this.onSubmit}>
-				<h1>Login Below!</h1>
-				<input
-					type="email"
-					name="email"
-					placeholder="Enter email"
-					value={this.state.email}
-					onChange={this.handleInputChange}
-					required
-				/>
-				<input
-					type="password"
-					name="password"
-					placeholder="Enter password"
-					value={this.state.password}
-					onChange={this.handleInputChange}
-					required
-				/>
-				<input type="submit" value="Submit" />
+      <Fragment>
+        <Links />
+        <form onSubmit={this.onSubmit}>
+          <h1>Login Below!</h1>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter email"
+            value={this.state.email}
+            onChange={this.handleInputChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter password"
+            value={this.state.password}
+            onChange={this.handleInputChange}
+            required
+          />
+          <input type="submit" value="Submit" />
 			</form>
+      </Fragment>
+		
 		);
 	}
 }
