@@ -9,6 +9,8 @@ import { Login } from "../pages/Login";
 import { Secret } from "../pages/Secret";
 import { Dashboard } from "../pages/Dashboard";
 import { Exercise } from "../views/Exercise";
+import Landing from "../pages/Landing"
+import SignUp from "../pages/SignUp"
 
 // Import Components
 // import { Links } from "./components/Links";
@@ -32,6 +34,8 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/dashboard" component={withAuth(Dashboard)} />
                 <Route path="/exercise" component={Exercise} />
+                <Route path="/landing" component={Landing} />
+                <Route path="/signup" component={SignUp} />
               </Switch>
 						</React.Fragment>
 				</div>
