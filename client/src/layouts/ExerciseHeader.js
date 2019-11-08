@@ -6,19 +6,22 @@ import { AppBar, Toolbar, Typography  } from '@material-ui/core';
 
 // Import Local Components
 import { ButtonLinks } from "../components/ButtonLinks";
-import { AddCreateButton } from "../components/AddCreateButton";
+import ExerciseCreate  from "../components/ExerciseCreate";
 
-const Header = () => {
+const ExerciseHeader = ({ muscles, onExerciseCreate }) => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="headline" color="inherit" style={{ flex: 1 }} >Workout Nav Bar</Typography>
+        <Typography variant="h4" color="inherit" style={{ flex: 1 }} >Workout Nav Bar</Typography>
         <ButtonLinks />
-        <AddCreateButton />
+        <ExerciseCreate 
+          muscles={muscles}
+          onCreate={onExerciseCreate}
+        />
       </Toolbar>
 	</AppBar>
   );
 };
 
-export { Header };
+export { ExerciseHeader };
 
