@@ -32,7 +32,7 @@ class DialogBox extends Component {
 		activity: {
 			action: '',
 			description: '',
-			count: 0,
+			count: '',
 			timestamp: Date.now()
 		}
 	};
@@ -40,8 +40,8 @@ class DialogBox extends Component {
 	componentDidMount() {
 		// API.getActivity =====((console.log(response in the API.js file) > returning a <pending> <resolved>? promise right now
 		API.getActivity()
-			.then((res) => this.setState({ activity: { action: res.data } }))
-			.catch((err) => console.log(err));
+			// .then((res) => this.setState({ activity: { action: res.data } }))
+			// .catch((err) => console.log(err));
 	}
 
 	handleToggle = () => {
