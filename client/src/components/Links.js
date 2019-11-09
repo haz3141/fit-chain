@@ -14,6 +14,7 @@ class Links extends Component {
 				<Link to="/exercise">Exercise</Link>
 				<Link to="/signup">Sign Up!</Link>
 				<Link to="/landing">Landing</Link>
+        <Link to="/test">Test</Link>
 			</React.Fragment>
 		);
 	}

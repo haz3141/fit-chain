@@ -20,6 +20,7 @@ import { withAuth } from "../utils/withAuth";
 
 // Import Class Assets
 import "./App.css";
+import LandingTest from "../pages/LandingTest";
 
 // Create Class Based App Component
 class App extends Component {
@@ -36,6 +37,7 @@ class App extends Component {
                 <Route path="/exercise" component={Exercise} />
                 <Route path="/landing" component={Landing} />
                 <Route path="/signup" component={SignUp} />
+                <Route path="/test" component={LandingTest} />
               </Switch>
 						</React.Fragment>
 				</div>
