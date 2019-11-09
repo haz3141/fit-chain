@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-// import TextField from '@material-ui/core/TextField';
+import TextField from '@material-ui/core/TextField';
 // import FormControlLabel from '@material-ui/core/FormControlLabel';
 // import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
@@ -97,48 +97,46 @@ class Landing extends Component {
 							Sign in
 						</Typography>
 						<form onSubmit={this.onSubmit} className={classes.form} noValidate>
-							{/* <FormControlLabel
-								control={<Checkbox value="remember" color="primary" />}
-								label="Remember me"
-							/> */}
-							<input
-								type="email"
-								name="email"
-								placeholder="Enter email"
-								value={this.state.email}
-								onChange={this.handleInputChange}
-								required
-							/>
-							<input
-								type="password"
-								name="password"
-								placeholder="Enter password"
-								value={this.state.password}
-								onChange={this.handleInputChange}
-								required
-							/>
-							<Button
-								type="submit"
-								fullWidth
-								variant="contained"
-								color="primary"
-								className={classes.submit}
-							>
-								Sign In
-							</Button>
-							<Grid container>
-								<Grid item xs>
-									<Link href="#" variant="body2">
-										Forgot password?
-									</Link>
-								</Grid>
-								<Grid item>
-									<Link href="#" variant="body2">
-										{"Don't have an account? Sign Up"}
-									</Link>
-								</Grid>
+						<Grid container spacing={2}>
+							<Grid item xs={12}>
+								<TextField
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+									variant="outlined"
+									required
+									fullWidth
+									id="email"
+									label="Email Address"
+									name="email"
+									autoComplete="email"
+								/>
 							</Grid>
-						</form>
+							<Grid item xs={12}>
+								<TextField
+                  value={this.state.password}
+                  onChange={this.handleInputChange}
+									variant="outlined"
+									required
+									fullWidth
+									name="password"
+									label="Password"
+									type="password"
+									id="password"
+									autoComplete="current-password"
+								/>
+							</Grid>
+						</Grid>
+						<Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+							Sign Up
+						</Button>
+						<Grid container justify="flex-end">
+							<Grid item>
+								<Link href="/landing" variant="body2">
+									Already have an account? Sign in
+								</Link>
+							</Grid>
+						</Grid>
+					</form>
 					</div>
 				</Grid>
 			</Grid>

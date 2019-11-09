@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 // import { Switch, Route } from 'react-router-dom';
 
 // Import Layouts
-import { Header } from "../layouts/Header";
+import { ExerciseHeader } from "../layouts/ExerciseHeader";
 import { ExerciseFooter } from "../layouts/ExerciseFooter";
 
 // Import Local Component
@@ -31,16 +31,25 @@ class Exercise extends Component {
 		);
 	}
   
-  handleCategorySelected = (category) => {
+  handleCategorySelect = (category) => {
 		this.setState({
 			category
 		});
   }
   
-  handleExerciseSelected = id => {
+  handleExerciseSelect = id => {
 		this.setState(({ exercises }) => ({
 			exercise: exercises.find((ex) => ex.id === id)
 		}));
+  }
+
+  handleExerciseCreate = exercise => {
+    this.setState(({ exercises }) => ({
+      exercises: [ 
+        ...exercises,
+        exercise
+      ]
+    }))
   }
   
   render() {
@@ -49,14 +58,21 @@ class Exercise extends Component {
 
     return (
       <Fragment>
-        <Header />
+        <ExerciseHeader 
+          onExerciseCreate={this.handleExerciseCreate}
+          muscles={muscles}
+        />
         <Exercises
           exercise={exercise}
-          onSelect={this.handleExerciseSelected}
+          onSelect={this.handleExerciseSelect}
           category={category}
           exercises={exercises}
         />
-        <ExerciseFooter category={category} muscles={muscles} onSelect={this.handleCategorySelected} />
+        <ExerciseFooter 
+          category={category} 
+          muscles={muscles} 
+          onSelect={this.handleCategorySelect} 
+          />
       </Fragment>
     );
   }

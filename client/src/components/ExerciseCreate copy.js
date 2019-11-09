@@ -7,22 +7,25 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
+import AddIcon from '@material-ui/icons/Add';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import PropTypes from 'prop-types';
-import AddIcon from '@material-ui/icons/Add';
-import { withStyles } from '@material-ui/styles';
-	
-const styles = (theme) => ({
+import { makeStyles } from '@material-ui/core/styles';
+
+// import { getEnabledCategories } from 'trace_events';
+// import FormHelperText from '@material-ui/core/FormHelperText';
+
+useStyles = makeStyles((theme) => ({
 	formControl: {
-		minWidth: 500
+		margin: theme.spacing(1),
+		minWidth: 120
 	},
 	selectEmpty: {
-		marginTop: 2
+		marginTop: theme.spacing(2)
 	}
-});
+}));
 
 class ExerciseCreate extends Component {
 	state = {
@@ -49,33 +52,14 @@ class ExerciseCreate extends Component {
 		});
 	};
 
-	handleSubmit = () => {
-		// TODO: validation
-		const { exercise } = this.state;
-
-		this.props.onCreate({
-			...exercise,
-			id: exercise.title.toLocaleLowerCase().replace(/ /g, '-')
-		});
-
-		this.setState({
-			open: false,
-			exercise: {
-				title: '',
-				description: '',
-				muscles: ''
-			}
-		});
-	};
-
 	render() {
 		const { open, exercise: { title, description, muscles } } = this.state,
-			{ classes, muscles: categories } = this.props;
+			{ muscles: categories } = this.props;
 
-		// const classes = this.props;
+		const classes = this.useStyles();
 		return (
 			<Fragment>
-				<Button color="inherit" onClick={this.handleToggle}>
+				<Button color="inherit" variant="fab" mini onClick={this.handleToggle}>
 					<AddIcon />
 				</Button>
 				<Dialog open={open} onClose={this.handleToggle} aria-labelledby="form-dialog-title">
@@ -89,17 +73,12 @@ class ExerciseCreate extends Component {
 								onChange={this.handleChange('title')}
 								label="Title"
 								margin="normal"
-								className={classes.FormControl}
 							/>
-							<br />
+							<br />	
 							<FormControl className={classes.FormControl}>
 								<InputLabel htmlFor="muscles">Muscles</InputLabel>
 								<Select value={muscles} onChange={this.handleChange('muscles')}>
-									{categories.map((category) => (
-										<MenuItem key={category} value={category}>
-											{category}
-										</MenuItem>
-									))}
+									{categories.map((category) => <MenuItem value={category}>{category}</MenuItem>)}
 								</Select>
 							</FormControl>
 							<br />
@@ -110,12 +89,11 @@ class ExerciseCreate extends Component {
 								onChange={this.handleChange('description')}
 								label="Description"
 								margin="normal"
-								className={classes.FormControl}
 							/>
 						</form>
 					</DialogContent>
 					<DialogActions>
-						<Button onClick={this.handleSubmit} color="primary" variant="contained">
+						<Button color="primary" variant="contained">
 							Create Workout
 						</Button>
 					</DialogActions>
@@ -125,8 +103,4 @@ class ExerciseCreate extends Component {
 	}
 }
 
-ExerciseCreate.propTypes = {
-	classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(ExerciseCreate);
+export { ExerciseCreate };

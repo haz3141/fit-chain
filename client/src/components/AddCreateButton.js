@@ -7,24 +7,16 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
+import AddIcon from '@material-ui/icons/Add';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import PropTypes from 'prop-types';
-import AddIcon from '@material-ui/icons/Add';
-import { withStyles } from '@material-ui/styles';
-	
-const styles = (theme) => ({
-	formControl: {
-		minWidth: 500
-	},
-	selectEmpty: {
-		marginTop: 2
-	}
-});
+// import { getEnabledCategories } from 'trace_events';
 
-class ExerciseCreate extends Component {
+// import FormHelperText from '@material-ui/core/FormHelperText';
+
+class AddCreateButton extends Component {
 	state = {
 		open: false,
 		exercise: {
@@ -49,33 +41,13 @@ class ExerciseCreate extends Component {
 		});
 	};
 
-	handleSubmit = () => {
-		// TODO: validation
-		const { exercise } = this.state;
-
-		this.props.onCreate({
-			...exercise,
-			id: exercise.title.toLocaleLowerCase().replace(/ /g, '-')
-		});
-
-		this.setState({
-			open: false,
-			exercise: {
-				title: '',
-				description: '',
-				muscles: ''
-			}
-		});
-	};
-
 	render() {
-		const { open, exercise: { title, description, muscles } } = this.state,
-			{ classes, muscles: categories } = this.props;
+		const { open, exercise: { title, description, muscles } } = this.state
+			
 
-		// const classes = this.props;
 		return (
 			<Fragment>
-				<Button color="inherit" onClick={this.handleToggle}>
+				<Button color="inherit" variant="fab" onClick={this.handleToggle}>
 					<AddIcon />
 				</Button>
 				<Dialog open={open} onClose={this.handleToggle} aria-labelledby="form-dialog-title">
@@ -89,17 +61,12 @@ class ExerciseCreate extends Component {
 								onChange={this.handleChange('title')}
 								label="Title"
 								margin="normal"
-								className={classes.FormControl}
 							/>
 							<br />
-							<FormControl className={classes.FormControl}>
+							<FormControl>
 								<InputLabel htmlFor="muscles">Muscles</InputLabel>
 								<Select value={muscles} onChange={this.handleChange('muscles')}>
-									{categories.map((category) => (
-										<MenuItem key={category} value={category}>
-											{category}
-										</MenuItem>
-									))}
+									<MenuItem value={111}>111 ya</MenuItem>
 								</Select>
 							</FormControl>
 							<br />
@@ -110,12 +77,11 @@ class ExerciseCreate extends Component {
 								onChange={this.handleChange('description')}
 								label="Description"
 								margin="normal"
-								className={classes.FormControl}
 							/>
 						</form>
 					</DialogContent>
 					<DialogActions>
-						<Button onClick={this.handleSubmit} color="primary" variant="contained">
+						<Button color="primary" variant="contained">
 							Create Workout
 						</Button>
 					</DialogActions>
@@ -125,8 +91,4 @@ class ExerciseCreate extends Component {
 	}
 }
 
-ExerciseCreate.propTypes = {
-	classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(ExerciseCreate);
+export { AddCreateButton };
