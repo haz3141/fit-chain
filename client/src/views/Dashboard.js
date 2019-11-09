@@ -17,9 +17,7 @@ class Dashboard extends Component {
         <Container fullWidth={true} style={{padding: 0}}>
           {/* <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} /> */}
           <Header />
-          <Body>
-            Test
-          </Body>
+          <Body />
           <Footer />
         </Container>
       </Fragment>

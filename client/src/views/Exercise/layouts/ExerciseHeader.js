@@ -6,7 +6,7 @@ import { AppBar, Toolbar, Typography  } from '@material-ui/core';
 
 // Import Local Components
 import { ButtonLinks } from "../../../components/ButtonLinks";
-import ExerciseCreate  from "../../../components/ExerciseCreate";
+import ExerciseCreate  from "../components/ExerciseCreate";
 
 const ExerciseHeader = ({ muscles, onExerciseCreate }) => {
   return (

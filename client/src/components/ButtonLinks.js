@@ -10,10 +10,10 @@ class ButtonLinks extends Component {
 	render() {
 		return (
 			<Fragment>
-			<Button color="inherit" component={Link} to="/">Home</Button>
-			<Button color="inherit" component={Link} to="/logout">Logout</Button>
 			<Button color="inherit" component={Link} to="/dashboard">Dashboard</Button>
 			<Button color="inherit" component={Link} to="/exercise">Exercise</Button>
+			<Button color="inherit" component={Link} to="/">Home</Button>
+			<Button color="inherit" component={Link} to="/logout">Logout</Button>
 			</Fragment>
 		);
 	}
