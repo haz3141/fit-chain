@@ -10,7 +10,7 @@ import { ExerciseFooter } from "./layouts/ExerciseFooter";
 import { Exercises } from "../../components/Exercises";
 
 // Import Store
-import { muscles, exercises } from "../../assets/store";
+import { muscles, exercises } from "./assets/store";
 
 // Instantiate Exercises
 class Exercise extends Component {
