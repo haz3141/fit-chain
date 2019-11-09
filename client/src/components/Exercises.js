@@ -24,7 +24,7 @@ function Exercises({
 }) {
   return (
     <Grid container direction="row" justify="center" alignItems="center">
-      <Grid container item sm>
+      <Grid item sm>
         <Paper style={styles.Paper}>
           {exercises.map(
             ([ group, exercises ]) =>
@@ -33,7 +33,6 @@ function Exercises({
                   <Typography variant="h4" style={{ textTransform: 'capitalize' }}>
                     {group}
                   </Typography>
-
                   <List component="ul" aria-label="secondary mailbox folders">
                     {exercises.map(({ id, title }) => (
                       <ListItem key={id} button onClick={() => onSelect(id)}>
@@ -46,9 +45,8 @@ function Exercises({
           )}
         </Paper>
       </Grid>
-      <Grid container item sm>
+      <Grid item sm>
         <Paper style={styles.Paper}>
-          
           <Typography variant="h2">{title}</Typography>
           <Typography variant="subtitle1" color="textSecondary" style={{ marginTop: 20 }}>
             {description}
