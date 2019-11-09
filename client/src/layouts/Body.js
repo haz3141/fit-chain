@@ -16,7 +16,7 @@ import { Grid } from '@material-ui/core';
 const Body = () => (
 	<Grid container direction="row" justify="center" alignItems="center">
 		<Grid container item sm>
-      
+			
 		</Grid>
 	</Grid>
 );

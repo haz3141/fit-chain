@@ -3,14 +3,14 @@ import React, { Component, Fragment } from "react";
 // import { Switch, Route } from 'react-router-dom';
 
 // Import Layouts
-import { ExerciseHeader } from "../layouts/ExerciseHeader";
-import { ExerciseFooter } from "../layouts/ExerciseFooter";
+import { ExerciseHeader } from "./layouts/ExerciseHeader";
+import { ExerciseFooter } from "./layouts/ExerciseFooter";
 
 // Import Local Component
-import { Exercises } from "../components/Exercises";
+import { Exercises } from "../../components/Exercises";
 
 // Import Store
-import { muscles, exercises } from "../assets/store";
+import { muscles, exercises } from "../../assets/store";
 
 // Instantiate Exercises
 class Exercise extends Component {
