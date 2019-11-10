@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 
 import CssBaseline from '@material-ui/core/CssBaseline';
-// import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
 // Import Layouts
@@ -14,8 +13,7 @@ class Dashboard extends Component {
     return (
       <Fragment>
         <CssBaseline />
-        <Container fullWidth={true} style={{padding: 0}}>
-          {/* <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} /> */}
+        <Container maxWidth="lg" style={{padding: 0, backgroundColor: '#cfe8fc'}}>
           <Header />
           <Body />
           <Footer />

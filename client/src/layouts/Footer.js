@@ -14,7 +14,7 @@ const Footer = () => {
 	return (
 		<Paper>
 			<Tabs
-				// value={index}
+				value={0}
 				// onChange={onIndexSelect}
 				// indicatorColor="primary"
 				// textColor="primary"

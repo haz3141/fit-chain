@@ -47,7 +47,7 @@ class AddCreateButton extends Component {
 
 		return (
 			<Fragment>
-				<Button color="inherit" variant="fab" onClick={this.handleToggle}>
+				<Button onClick={this.handleToggle}>
 					<AddIcon />
 				</Button>
 				<Dialog open={open} onClose={this.handleToggle} aria-labelledby="form-dialog-title">

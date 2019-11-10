@@ -6,15 +6,14 @@ import { AppBar, Toolbar, Typography  } from '@material-ui/core';
 
 // Import Local Components
 import { ButtonLinks } from "../components/ButtonLinks";
-import { AddCreateButton } from "../components/AddCreateButton";
 
 const Header = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="headline" color="inherit" style={{ flex: 1 }} >Workout Nav Bar</Typography>
+        <Typography variant="h5" color="inherit" style={{ flex: 1 }} >Workout Nav Bar</Typography>
         <ButtonLinks />
-        <AddCreateButton />
+        
       </Toolbar>
 	</AppBar>
   );
