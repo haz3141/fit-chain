@@ -39,10 +39,15 @@ class DialogBox extends Component {
 
 	componentDidMount() {
 		// API.getActivity =====((console.log(response in the API.js file) > returning a <pending> <resolved>? promise right now
-		API.getActivity()
+		this.loadActivities()
 			// .then((res) => this.setState({ activity: { action: res.data } }))
 			// .catch((err) => console.log(err));
 	}
+
+	loadActivities = () => {
+		API.getActivities()
+	}
+
 
 	handleToggle = () => {
 		this.setState({
@@ -69,8 +74,10 @@ class DialogBox extends Component {
 			}
 		})
 			.then((res) => {
-				if (res.status === 200) {
-					this.props.history.push('/');
+				if (res) {
+					// this.props.history.push('/');
+					// console.log("OnSubmit worked....")
+					return res
 				} else {
 					const error = new Error(res.error);
 					throw error;
@@ -97,7 +104,7 @@ class DialogBox extends Component {
 					<DialogContent>
 						<DialogContentText>Please build your Workout in the form below</DialogContentText>
 
-						<form onClick={this.handleSubmit}>
+						<form>
 							<FormControl className={classes.FormControl}>
 								<InputLabel htmlFor="action">Action</InputLabel>
 								<Select value={action} onChange={this.handleChange('action')}>
@@ -126,7 +133,7 @@ class DialogBox extends Component {
 								margin="normal"
 								className={classes.FormControl}
 							/>
-							<Button color="primary" variant="contained">
+							<Button onClick={this.onSubmit} color="primary" variant="contained">
 								Create Workout
 							</Button>
 						</form>

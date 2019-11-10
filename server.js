@@ -77,28 +77,22 @@ app.post('/api/register', function(req, res) {
 // GET Route - find activity in Database
 // /api/return/activity
 app.get('/api/return/activity', function(req, res) {
-  Activity.find({})
-  .then(Activity => res.json(Activity))
-  .catch(err => res.status(422).json(err));
-})
+	Activity.find({}).then((activities) => res.json(activities)).catch((err) => res.status(422).json(err));
+});
 
 // POST Route to Register ACTIVITY
 app.post('/api/activity', function(req, res) {
-	const { type, description, count, timestamp, user } = req.body;
-	const activity = new Activity({ type, description, count, timestamp, user });
+	// const { type, description, count, timestamp, user } = req.body;
+	// const activity = new Activity({ type, description, count, timestamp, user });
 
-	Activity.create(req.body)
-		.then(function() {
-			return Activity.find({});
-		})
-		.then(function(dbUser) {
-			// If the User was updated successfully, send it back to the client
-			res.json(dbUser);
-		})
-		.catch(function(err) {
-			// If an error occurs, send it back to the client
-			res.json(err);
-		});
+	console.log(req.body.activity);
+
+	Activity.create(req.body.activity)
+	.then( activity => res.json(activity))
+	.catch(function(err) {
+		// If an error occurs, send it back to the client
+		res.json(err);
+	});
 });
 
 // POST Route to Authenticate User !! API Test

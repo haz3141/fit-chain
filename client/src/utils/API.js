@@ -2,11 +2,11 @@ import axios from 'axios';
 
 export default {
 	// Gets all books
-	getActivity: function() {
-    const dbActivity = axios.get('/api/return/activity')
-    console.log(dbActivity)
+	getActivities: function() {
+    const dbActivities = axios.get('/api/return/activity')
+    console.log({ dbActivities })
 
-    return dbActivity
+    return dbActivities
 	}
 };
 // ,
