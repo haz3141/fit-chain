@@ -23,11 +23,13 @@ require("./routes/htmlRoutes")(app);
 const MONGODB_URI = process.env.MONGODB_URI;
 
 // Connect MongoDB
+// added useFindAndModify for updating User with workout > findOneandUpdate
 mongoose
 	.connect(MONGODB_URI, {
 		useCreateIndex: true,
 		useNewUrlParser: true,
-		useUnifiedTopology: true
+		useUnifiedTopology: true,
+		useFindAndModify: false
 	})
 	.then(console.log('(>^_^)> ==> MongoDB Connection Successful!')); // Catch error !! CB or .catch()
 

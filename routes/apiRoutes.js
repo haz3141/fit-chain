@@ -48,18 +48,40 @@ module.exports = function(app) {
 
 	// POST Route to Register ACTIVITY
 	app.post('/api/activity', function(req, res) {
+
+		// console.log(req.cookies)
+		let userToken = req.cookies.token
+		console.log(userToken)
+		// let token = userToken.split(' ');
+		// let decoded = jwt.verify(token[1], secret);
+		// console.log(decoded);
+
 		// console.log(req.body.activity);
-        Activity.create(req.body.activity)
-        .then((activity) => res.json(activity))
-        .catch(function(err) {
-			// If an error occurs, send it back to the client
-			res.json(err);
-		});
+		Activity.create(req.body.activity)
+			.then(function(activity) {
+				console.log(activity);
+				// If a Book was created successfully, find one library (there's only one) and push the new Book's _id to the Library's `books` array
+				// { new: true } tells the query that we want it to return the updated Library -- it returns the original by default
+				// , { new: true }
+				// Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
+
+				// TODO: NEED TO ENTER CURRENT USER ID > IN THE {}, so it does not just update the first User in Database
+				return User.findOneAndUpdate({}, { $push: { activities: activity._id } });
+			})
+			.then(function(activity) {
+				// If the User was updated successfully, send it back to the client
+				res.json(activity);
+			})
+			.catch(function(err) {
+				// If an error occurs, send it back to the client
+				res.json(err);
+			});
+		// .then((activity) => res.json(activity))
 	});
 
 	// POST Route to Authenticate User !! API Test
 	app.post('/api/authenticate', function(req, res) {
-        console.log({req})
+		console.log({ req });
 		const { email, password } = req.body;
 		User.findOne({ email }, function(err, user) {
 			if (err) {

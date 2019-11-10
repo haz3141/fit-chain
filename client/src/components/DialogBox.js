@@ -77,6 +77,8 @@ class DialogBox extends Component {
 				if (res) {
 					// this.props.history.push('/');
 					// console.log("OnSubmit worked....")
+					// TODO : remove text from the activities state on submit - along with { open: false}
+					this.setState({ open: false })
 					return res
 				} else {
 					const error = new Error(res.error);

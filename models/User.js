@@ -5,13 +5,16 @@ const bcrypt = require('bcrypt');
 // Associate Model
 // const Activity = require('./Activity');
 
+// Save a reference to the Schema constructor
+var Schema = mongoose.Schema;
+
 // Sets Cost Factor to 10 Hash Rounds
 // Every +1 Rounds Doubles Necessary Time
 // More Time Increases Brute Force Difficulty
 const saltRounds = 10;
 
 // User Objects Factory
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
 	email: {
 		type: String,
 		required: true,
@@ -21,9 +24,9 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	activies: [
+	activities: [
 		{
-			type: mongoose.Schema.Types.ObjectId,
+			type: Schema.Types.ObjectId,
 			ref: 'Activity'
 		}
 	]

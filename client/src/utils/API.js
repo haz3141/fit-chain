@@ -4,11 +4,13 @@ export default {
 	// Gets all books
 	getActivities: function() {
     const dbActivities = axios.get('/api/return/activity')
-    console.log({ dbActivities })
+    // console.log({ dbActivities })
 
     return dbActivities
 	}
 };
+
+// ==== from week 20 example - books
 // ,
 // Gets the book with the given id
 // getBook: function(id) {
