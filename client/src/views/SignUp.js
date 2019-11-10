@@ -10,9 +10,6 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
-// import Paper from '@material-ui/core/Paper';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import Checkbox from '@material-ui/core/Checkbox';
 
 const styles = (theme) => ({
 	'@global': {
