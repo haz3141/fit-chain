@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h5" color="inherit" style={{ flex: 1 }} >Workout Nav Bar</Typography>
+      <Typography variant="h5" color="inherit" style={{ flex: 1 }} >Fit Chain</Typography>
         <ButtonLinks />
         
       </Toolbar>

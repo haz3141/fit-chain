@@ -14,9 +14,7 @@ import PropTypes from 'prop-types';
 import AddIcon from '@material-ui/icons/Add';
 import { withStyles } from '@material-ui/styles';
 
-// Hit Our api route to get activity from DB
-// import API from '../utils/API';
-
+// Styles to be passed in as Proptypes when rendering the component
 const styles = (theme) => ({
 	formControl: {
 		minWidth: 500
@@ -36,14 +34,6 @@ class DialogBox extends Component {
 			timestamp: Date.now()
 		}
 	};
-
-	// componentDidMount() {
-	// 	this.loadActivities()
-	// }
-
-	// loadActivities = () => {
-	// 	API.getActivities()
-	// }
 
 	handleToggle = () => {
 		this.setState({

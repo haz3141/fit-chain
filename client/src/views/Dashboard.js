@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 // Import Layouts
 import { Header } from "../layouts/Header";
 import { Body } from "../layouts/Body";
-import { Footer } from "../layouts/Footer";
+import Footer from "../layouts/Footer";
 
 class Dashboard extends Component {
   render() {

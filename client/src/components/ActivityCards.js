@@ -29,16 +29,16 @@ const styles = (theme) => ({
 	  }
 });
 
-class Activities extends Component {
+class ActivityCards extends Component {
 	state = {
-		activities: ""
+		activities: {
+			action: "",
+			description: "",
+			count: ""
+		}
 	};
 
-	// {
-	// 	action: "",
-	// 	description: "",
-	// 	count: ""
-	// }
+	
 
 	componentDidMount() {
 		this.loadActivities();
@@ -90,9 +90,9 @@ class Activities extends Component {
 	}
 }
 
-// export default Activities;
-Activities.propTypes = {
+// export default ActivityCards;
+ActivityCards.propTypes = {
 	classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Activities);
+export default withStyles(styles)(ActivityCards);
