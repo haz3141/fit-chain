@@ -7,7 +7,7 @@ require("dotenv").config();
 const secret = process.env.SECRET_KEY;
 
 const withAuth = function(req, res, next) {
-  console.log(req.body);
+  // console.log(req.body);
   // console.log(res);
 
   const token =

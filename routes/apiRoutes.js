@@ -48,13 +48,34 @@ module.exports = function(app) {
 
 	// POST Route to Register ACTIVITY
 	app.post('/api/activity', function(req, res) {
-
+		
 		// console.log(req.cookies)
-		let userToken = req.cookies.token
-		console.log(userToken)
+		// console.log({userToken})
 		// let token = userToken.split(' ');
 		// let decoded = jwt.verify(token[1], secret);
 		// console.log(decoded);
+
+		let userToken = req.cookies.token
+		let userEmail = ""
+		if (!userToken) {
+			res.status(401).send(
+			  "Unauthorized: No token provided."
+			);
+		  } else {
+			jwt.verify(userToken, secret, function(err, decoded) {
+			  if (err) {
+				res.status(401).send(
+				  "Unauthorized: Invalid token."
+				);
+			  } else {
+				userEmail = decoded.email;
+				  console.log("REQ.EMAIL ==> ", userEmail)
+				  return userEmail
+				//   console.log({req})
+				// next();
+			  }
+			});
+		  }
 
 		// console.log(req.body.activity);
 		Activity.create(req.body.activity)
@@ -66,7 +87,7 @@ module.exports = function(app) {
 				// Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
 
 				// TODO: NEED TO ENTER CURRENT USER ID > IN THE {}, so it does not just update the first User in Database
-				return User.findOneAndUpdate({}, { $push: { activities: activity._id } });
+				return User.findOneAndUpdate({email: userEmail}, { $push: { activities: activity._id } });
 			})
 			.then(function(activity) {
 				// If the User was updated successfully, send it back to the client
