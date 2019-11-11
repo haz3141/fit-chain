@@ -15,7 +15,12 @@ import API from '../utils/API';
 const styles = (theme) => ({
 	card: {
 		minWidth: 225,
-		margin: 15
+		maxWidth: 225,
+		margin: 15,
+		background: 'linear-gradient(45deg, #986AC0 30%, #A086BD 90%)',
+		borderRadius: 3,
+		color: 'white',
+		boxShadow: '0 4px 6px 3x rgba(255, 105, 135, .3)'
 	},
 	bullet: {
 		display: 'inline-block',
@@ -23,7 +28,10 @@ const styles = (theme) => ({
 		transform: 'scale(0.8)'
 	},
 	title: {
-		fontSize: 14
+		fontSize: 24
+	},
+	description: {
+		fontSize: 20
 	},
 	pos: {
 		marginBottom: 12
@@ -68,9 +76,9 @@ class ActivityCards extends Component {
 
 	render() {
 		const activitySet = [ this.state ];
-		const actions = activitySet[0].action
-		const descriptions = activitySet[0].description
-		const counts = activitySet[0].count
+		const actions = activitySet[0].action;
+		const descriptions = activitySet[0].description;
+		const counts = activitySet[0].count;
 		const { classes } = this.props;
 		// console.log(activitySet);
 		// console.log(actions);
@@ -80,13 +88,13 @@ class ActivityCards extends Component {
 				{actions.map((action, index) => (
 					<Card className={classes.card} key={index} align="center">
 						<CardContent>
-							<Typography className={classes.title}  gutterBottom>
+							<Typography className={classes.title} gutterBottom>
 								{actions[index]}
 							</Typography>
 							<Typography variant="h5" component="h2" color="textSecondary">
 								{counts[index]}
 							</Typography>
-							<Typography variant="body2" component="p">
+							<Typography className={classes.description} variant="body2" component="p">
 								{descriptions[index]}
 							</Typography>
 						</CardContent>
