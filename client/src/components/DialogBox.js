@@ -14,8 +14,8 @@ import PropTypes from 'prop-types';
 import AddIcon from '@material-ui/icons/Add';
 import { withStyles } from '@material-ui/styles';
 
-// Hit Our api route to get activty from DB
-import API from '../utils/API';
+// Hit Our api route to get activity from DB
+// import API from '../utils/API';
 
 const styles = (theme) => ({
 	formControl: {
@@ -37,17 +37,13 @@ class DialogBox extends Component {
 		}
 	};
 
-	componentDidMount() {
-		// API.getActivity =====((console.log(response in the API.js file) > returning a <pending> <resolved>? promise right now
-		this.loadActivities()
-			// .then((res) => this.setState({ activity: { action: res.data } }))
-			// .catch((err) => console.log(err));
-	}
+	// componentDidMount() {
+	// 	this.loadActivities()
+	// }
 
-	loadActivities = () => {
-		API.getActivities()
-	}
-
+	// loadActivities = () => {
+	// 	API.getActivities()
+	// }
 
 	handleToggle = () => {
 		this.setState({
