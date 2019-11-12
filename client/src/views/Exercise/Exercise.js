@@ -7,7 +7,7 @@ import { ExerciseHeader } from "./layouts/ExerciseHeader";
 import { ExerciseFooter } from "./layouts/ExerciseFooter";
 
 // Import Local Component
-import { Exercises } from "./components/Exercises";
+import { Exercises } from "./layouts/Exercises";
 
 // Import Store
 import { muscles, exercises } from "./assets/store";

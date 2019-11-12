@@ -34,4 +34,4 @@ function NavTabs(props) {
     );
 }
 
-export default NavTabs;
+export { NavTabs };

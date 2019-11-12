@@ -19,6 +19,6 @@ export const exercises = [
         id: "barbell-curls",
         title: "Barbell Curls",
         description: "Biceps exercise...",
-        muscles: "amrs"
+        muscles: "arms"
     }
 ]

@@ -10,7 +10,7 @@ export default {
 	}
 };
 
-// ==== from week 20 example - books
+// ====
 // ,
 // Gets the book with the given id
 // getBook: function(id) {

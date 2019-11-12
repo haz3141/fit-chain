@@ -84,7 +84,6 @@ module.exports = function(app) {
 				// , { new: true }
 				// Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
 
-				// TODO: NEED TO ENTER CURRENT USER ID > IN THE {}, so it does not just update the first User in Database
 				return User.findOneAndUpdate({ email: userEmail }, { $push: { activities: activity._id } });
 			})
 			.then(function(activity) {
