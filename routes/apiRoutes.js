@@ -49,6 +49,60 @@ module.exports = function(app) {
 		Activity.find({}).then((activities) => res.json(activities)).catch((err) => res.status(422).json(err));
 	});
 
+	// TODO: return only current email associated actions/activities
+	// GET Route - find activity in Database
+	app.get('/api/user/all/actions', function(req, res) {
+		let userToken = req.cookies.token;
+		let userEmail = '';
+		if (!userToken) {
+			res.status(401).send('Unauthorized: No token provided.');
+		} else {
+			jwt.verify(userToken, secret, function(err, decoded) {
+				if (err) {
+					res.status(401).send('Unauthorized: Invalid token.');
+				} else {
+					userEmail = decoded.email;
+					console.log('REQ.EMAIL ==> ', userEmail);
+					return userEmail;
+					//   console.log({req})
+					// next();
+				}
+			});
+		}
+
+		// * Find current User
+		// * Parse to get user associated workout IDs Activities
+		// * find Activities for user Workout IDs
+		// * respond with workouts with these IDs only
+		User.find({ email: userEmail })
+			// return User.findOneAndUpdate({ email: userEmail }.... copy from post
+
+			.then(function(user) {
+				let activities = user[0].activities;
+
+				console.log({ activities });
+				// TODO: need to map over these and transform in to "Object("-id") strings to pass into $in
+
+				// db.inventory.find( { status: { $in: [ "A", "D" ] } } ) >
+				// TODO: Our ["A", "D"] is an array
+				let userActions = Activities.find({ $in: activities });
+				// console.log({ userActions })
+
+				return userActions
+				
+				// RESPOND IN next .then with those matching workouts found
+				//  TODO: multi id() query - $in("WithVariable")?
+			})
+			.then(function(userActions) {
+		
+				res.json(userActions);
+			})
+			.catch(function(err) {
+				// If an error occurs, send it back to the client
+				res.json(err);
+			});
+	});
+
 	// POST Route to Register ACTIVITY
 	app.post('/api/activity', function(req, res) {
 		// console.log(req.cookies)

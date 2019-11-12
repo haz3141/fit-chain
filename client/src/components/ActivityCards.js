@@ -14,7 +14,7 @@ import API from '../utils/API';
 
 const styles = (theme) => ({
 	card: {
-		minWidth: 225,
+		minWidth: 100,
 		maxWidth: 225,
 		margin: 15,
 		background: 'linear-gradient(45deg, #986AC0 30%, #A086BD 90%)',

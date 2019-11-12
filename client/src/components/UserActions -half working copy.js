@@ -7,6 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 // import CardActions from '@material-ui/core/CardActions';
 // import Button from '@material-ui/core/Button';
+
 import { withStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
@@ -14,7 +15,7 @@ import API from '../utils/API';
 
 const styles = (theme) => ({
 	card: {
-		minWidth: 100,
+		minWidth: 225,
 		maxWidth: 225,
 		margin: 15,
 		background: 'linear-gradient(45deg, #986AC0 30%, #A086BD 90%)',
@@ -49,12 +50,10 @@ class UserActions extends Component {
 		this.loadActivities();
 	}
 
-	// TODO: NEED TO FILTER IN THE API FUNCTION for current USER email / _id.. 
-	// need the res =>>>  = return the associated email profile/activities 
 	loadActivities = () => {
-		API.getUserActions()
+		API.getActivities()
 			.then((res) => {
-				console.log("Load activities, UserActions . from API = res =", res);
+				// console.log(res.data);
 				let data = res.data;
 				data.map((data) =>
 					this.setState({
@@ -63,20 +62,28 @@ class UserActions extends Component {
 						count: [ ...this.state.count, data.count ]
 					})
 				);
+				activitySet = [this.state.activities];
+				console.log({ activitySet });
+				// setState one more time to render the current all states from db..
+				this.setState({
+					action: [ ...this.state.action ],
+					description: [ ...this.state.description ],
+					count: [ ...this.state.count ]
+				});
+				// console.log(this.state)
 			})
 			.catch((err) => console.log(err));
 	};
 
 	render() {
 		const activitySet = [ this.state ];
-		// console.log({activitySet})
 		const actions = activitySet[0].action;
 		const descriptions = activitySet[0].description;
 		const counts = activitySet[0].count;
 		const { classes } = this.props;
-		// console.log(activitySet);
-		// console.log(actions);
-		
+		console.log(activitySet);
+		console.log(actions);
+
 		return (
 			<Fragment>
 				{actions.map((action, index) => (
@@ -94,11 +101,16 @@ class UserActions extends Component {
 						</CardContent>
 					</Card>
 				))}
+
+				{/* <div>
+					<h1>TEXT</h1>
+				</div> */}
 			</Fragment>
 		);
 	}
 }
 
+// export default UserActions;
 UserActions.propTypes = {
 	classes: PropTypes.object.isRequired
 };

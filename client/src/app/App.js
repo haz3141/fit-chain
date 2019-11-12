@@ -7,6 +7,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Login } from "../views/Login";
 import { Secret } from "../views/Secret";
 import { Dashboard } from "../views/Dashboard";
+import { Profile } from "../views/Profile";
 import { Exercise } from "../views/Exercise/Exercise";
 import Landing from "../views/Landing"
 import SignUp from "../views/SignUp"
@@ -29,6 +30,8 @@ class App extends Component {
                 <Route path="/secret" component={withAuth(Secret)} />
                 <Route path="/login" component={Login} />
                 <Route path="/dashboard" component={withAuth(Dashboard)} />
+                {/* TEST- render full Profile component for now to build out UserAction */}
+                <Route path="/profile" component={withAuth(Profile)} />
                 <Route path="/exercise" component={Exercise} />
                 <Route path="/landing" component={Landing} />
                 <Route path="/signup" component={SignUp} />

@@ -11,7 +11,9 @@ class Links extends Component {
 				<Link to="/landing">Landing</Link>
 				<Link to="/signup">Sign Up!</Link>
 				<Link to="/dashboard">Dashboard</Link>
-				<Link exact to="/dashboard/profile">Profile</Link>
+				{/* --CHange back to this when conditionally rendering */}
+				{/* <Link exact to="/dashboard/profile">Profile</Link> */}
+				<Link to="/profile">Profile</Link>
 
 				{/* <Link to="/login">Login</Link>
 				<Link to="/secret">Secret</Link>

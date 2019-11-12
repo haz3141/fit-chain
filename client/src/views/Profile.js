@@ -9,6 +9,7 @@ import { ProfileBody } from "../layouts/ProfileBody";
 import Footer from "../layouts/Footer";
 
 // TODO: ? addComponentDidMount /- Render just ProfileBody conditionally -?
+// make sure 
 
 class Profile extends Component {
   render() {
