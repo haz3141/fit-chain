@@ -13,7 +13,7 @@ class Dashboard extends Component {
 		return (
 			<Fragment>
 				<CssBaseline />
-				<Container maxWidth="lg" style={{ padding: 0, backgroundColor: '#cfe8fc' }}>
+				<Container maxWidth="xl" style={{ padding: 0, backgroundColor: '#cfe8fc' }}>
 					<Header />
 					<Body />
 					<Footer />

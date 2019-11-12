@@ -12,7 +12,7 @@ export default {
 	// TODO: FINISH FILTER by user Email/._id .>action action, description, count
 	getUserActions: function() {
 		const userActions = axios.get('/api/user/all/actions');
-		// console.log({ userActions })
+		console.log({ userActions })
 		
 		return userActions;
 	}

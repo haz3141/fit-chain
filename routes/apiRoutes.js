@@ -4,6 +4,10 @@ const withAuth = require('../middleware/withAuth');
 // Import Activity Model
 const { User, Activity } = require('../models');
 
+const mongoose = require('mongoose');
+let ObjectId = require('mongoose').Types.ObjectId;
+// const ObjectId = mongoose.Types.ObjectId
+
 // Set Protected Environment Variables
 // Define Token Signing Key
 require('dotenv').config();
@@ -70,32 +74,54 @@ module.exports = function(app) {
 			});
 		}
 
-		// * Find current User
-		// * Parse to get user associated workout IDs Activities
-		// * find Activities for user Workout IDs
-		// * respond with workouts with these IDs only
+		// * Find current User - - Parse to get user associated workout IDs Activities
+		// * find Activities for user Workout IDs - - respond with workouts with these IDs only
 		User.find({ email: userEmail })
-			// return User.findOneAndUpdate({ email: userEmail }.... copy from post
-
 			.then(function(user) {
 				let activities = user[0].activities;
 
-				console.log({ activities });
+				console.log('user find by email > .then(res = = user[0].activities ==activities= ', activities);
+
+				// let checked = ObjectId.toString(activities)
+				// console.log( { checked });
 				// TODO: need to map over these and transform in to "Object("-id") strings to pass into $in
 
-				// db.inventory.find( { status: { $in: [ "A", "D" ] } } ) >
-				// TODO: Our ["A", "D"] is an array
-				let userActions = Activities.find({ $in: activities });
+				activities.forEach((userAction) => {
+					const results = [];
+
+					// ObjectId.toString(userAction)
+					
+					let sammy = ObjectId(`"${userAction}"`)
+					console.log("sammy: ", sammy)
+
+					Activities.find({ _id:  ObjectId(`"${userAction}"`)})
+					.then((res) => {
+						console.log('THIS IS RES == ', res);
+						results.push(res);
+					});
+
+					// return results
+					// 	console.log(userAction)
+					// .then(function(activity) {
+					// 	console.log('activity ==== ', activity);
+					// 	res.json(activity)
+					// });
+					// console.log(userActivities)
+					// return userActivities
+				});
+
+				// res.json(activities)
+				// Activities( { status: { $in: [ "A", "D" ] } } ) >
 				// console.log({ userActions })
 
-				return userActions
-				
+				// return userActivities;
+
 				// RESPOND IN next .then with those matching workouts found
 				//  TODO: multi id() query - $in("WithVariable")?
 			})
-			.then(function(userActions) {
-		
-				res.json(userActions);
+			.then(function(userActivities) {
+				console.log({ userActivities });
+				res.json(userActivities);
 			})
 			.catch(function(err) {
 				// If an error occurs, send it back to the client

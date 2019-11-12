@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 // import CardActions from '@material-ui/core/CardActions';
 // import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core';
+// , Container
 import PropTypes from 'prop-types';
 
 import API from '../utils/API';
@@ -76,21 +77,21 @@ class ActivityCards extends Component {
 
 		return (
 			<Fragment>
-				{actions.map((action, index) => (
-					<Card className={classes.card} key={index} align="center">
-						<CardContent>
-							<Typography className={classes.title} gutterBottom>
-								{actions[index]}
-							</Typography>
-							<Typography variant="h5" component="h2" color="textSecondary">
-								{counts[index]}
-							</Typography>
-							<Typography className={classes.description} variant="body2" component="p">
-								{descriptions[index]}
-							</Typography>
-						</CardContent>
-					</Card>
-				))}
+					{actions.map((action, index) => (
+						<Card className={classes.card} key={index} align="center">
+							<CardContent>
+								<Typography className={classes.title} gutterBottom>
+									{actions[index]}
+								</Typography>
+								<Typography variant="h5" component="h2" color="textSecondary">
+									{counts[index]}
+								</Typography>
+								<Typography className={classes.description} variant="body2" component="p">
+									{descriptions[index]}
+								</Typography>
+							</CardContent>
+						</Card>
+					))}
 			</Fragment>
 		);
 	}

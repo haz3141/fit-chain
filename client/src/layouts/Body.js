@@ -26,6 +26,7 @@ class Body extends Component {
 				<Grid container item sm>
 					<Fragment>
 						<ActivityCards />
+						{/* <UserActions /> .. conditionally render win SWITCH */}
 					</Fragment>
 				</Grid>
 			</Grid>
