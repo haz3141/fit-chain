@@ -13,6 +13,9 @@ import { withStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import backImage from '../images/bikebridge.jpeg';
 
+import { classes } from "./about.css"
+
+console.log(classes)
 // ,
 // 	image: {
 // 		backgroundImage: `url("${backImage}")`,
@@ -23,6 +26,7 @@ import backImage from '../images/bikebridge.jpeg';
 
 const styles = (theme) => ({
 	root: {
+		margin: 0,
 		height: '100vh',
 		backgroundImage: `url("${backImage}")`,
 		backgroundRepeat: 'no-repeat',
@@ -72,7 +76,8 @@ class About extends Component {
 			<Grid container component="main" className={classes.root}>
 				<CssBaseline />
 				{/* <Grid item xs={false} sm={4} md={7} /> */}
-				<Grid item xs={12} sm={8} md={5} square>
+				{/* square */}
+				<Grid item xs={12} sm={8} md={5} >
 					<div className={classes.paper}>
 						<Typography component="h1" variant="h4">
 							FitChain
