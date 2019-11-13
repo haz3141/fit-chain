@@ -4,8 +4,8 @@ const withAuth = require('../middleware/withAuth');
 // Import Activity Model
 const { User, Activity } = require('../models');
 
-const mongoose = require('mongoose');
-let ObjectId = require('mongoose').Types.ObjectId;
+// const mongoose = require('mongoose');
+// let ObjectId = require('mongoose').Types.ObjectId;
 // const ObjectId = mongoose.Types.ObjectId
 
 // Set Protected Environment Variables
