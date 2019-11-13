@@ -54,7 +54,7 @@ class UserActions extends Component {
 	loadActivities = () => {
 		API.getUserActions()
 			.then((res) => {
-				console.log("Load activities, UserActions . from API = res =", res);
+				// console.log("Load activities, UserActions . from API = res =", res);
 				let data = res.data;
 				data.map((data) =>
 					this.setState({
@@ -75,7 +75,7 @@ class UserActions extends Component {
 		const counts = activitySet[0].count;
 		const { classes } = this.props;
 		// console.log(activitySet);
-		// console.log(actions);
+		console.log(actions);
 		
 		return (
 			<Fragment>

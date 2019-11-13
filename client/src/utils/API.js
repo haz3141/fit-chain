@@ -3,9 +3,8 @@ import axios from 'axios';
 export default {
 	// Gets all books
 	getActivities: function() {
-		const dbActivities = axios.get('/api/return/activity');
-		// console.log({ dbActivities })
-
+    const dbActivities = axios.get('/api/return/activity');
+    
 		return dbActivities;
 	},
 	// Gets actions done by the current user email
