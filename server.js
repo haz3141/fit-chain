@@ -15,10 +15,6 @@ app.use(express.static('public'));
 app.use(logger('dev'));
 app.use(cookieParser());
 
-// Import Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
-
 // Set MongoDB Path
 const MONGODB_URI = process.env.MONGODB_URI;
 
@@ -37,6 +33,10 @@ mongoose
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
 }
+
+// Import Routes
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 // Start Express Listener
 app.listen(PORT, function() {
