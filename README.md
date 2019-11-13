@@ -1,5 +1,5 @@
 
-# Chain Fit - DEPRECATED BUILD
+# FitChain
 ### MERN 
 ### Create React Express App
 
