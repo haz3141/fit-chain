@@ -23,8 +23,8 @@ module.exports = function(app) {
   });
 
   // GET Route !! API Test
-  app.get("/api/landing", function(req, res) {
-    res.send("Landing Page!");
+  app.get("/api/signin", function(req, res) {
+    res.send("SignIn Page!");
   });
 
   // GET Route !! Authenticated API Test

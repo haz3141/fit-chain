@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import { Grid } from '@material-ui/core';
 import ActivityCards from '../components/ActivityCards';
-import UserActions from "../components/UserActions"
+import UserActions from '../components/UserActions';
 
 import { withStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
@@ -17,7 +17,7 @@ const styles = (theme) => ({
 class Body extends Component {
 	// TODO : CONDITIONALLY RENDER NESTED, from the Header
 	// MAYBE PASS THIS UP TO BUTTONLINKS in the header.?
-	// Note- changed body to class based component 
+	// Note- changed body to class based component
 	// TODO: Note - for now, ActivityCards are Dashboard showing all.
 	// TODO: Need Portfolio to render from button links, so we can reuse header and footer..
 
@@ -28,19 +28,19 @@ class Body extends Component {
 				<Grid container item sm>
 					<Fragment>
 						<Switch>
-            <Route exact path="/">
-                <ActivityCards />
-                <h1>/</h1>
-              </Route>
-              <Route exact path="/dashboard">
-                <ActivityCards />
-                <h1>DASHBOARD</h1>
-              </Route>
-              <Route path="/dashboard/profile">
-                <UserActions />
-                <h1>PROFILE</h1>
-              </Route>
-            </Switch>
+							<Route exact path="/">
+								<ActivityCards />
+								<h1>/</h1>
+							</Route>
+							<Route exact path="/dashboard">
+								<ActivityCards />
+								<h1>DASHBOARD</h1>
+							</Route>
+							<Route path="/dashboard/profile">
+								<UserActions />
+								<h1>PROFILE</h1>
+							</Route>
+						</Switch>
 					</Fragment>
 				</Grid>
 			</Grid>

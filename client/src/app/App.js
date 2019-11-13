@@ -8,8 +8,9 @@ import { Login } from "../views/Login";
 import { Secret } from "../views/Secret";
 import { Dashboard } from "../views/Dashboard";
 import { Exercise } from "../views/Exercise/Exercise";
-import Landing from "../views/Landing"
+import SignIn from "../views/SignIn"
 import SignUp from "../views/SignUp"
+import About from '../views/About';
 
 // Import Utils
 import { withAuth } from "../utils/withAuth";
@@ -26,13 +27,13 @@ class App extends Component {
 						<React.Fragment>
 							<Switch>
                 <Route path="/" exact component={withAuth(Dashboard)} />
-                <Route path="/secret" component={withAuth(Secret)} />
+                <Route path="/about" component={About} />
+                <Route path="/signin" component={SignIn} />
+                <Route path="/signup" component={SignUp} />
                 <Route path="/login" component={Login} />
                 <Route path="/dashboard" component={withAuth(Dashboard)} />
-                {/* TEST- render full Profile component for now to build out UserAction */}
-                <Route path="/exercise" component={Exercise} />
-                <Route path="/landing" component={Landing} />
-                <Route path="/signup" component={SignUp} />
+                <Route path="/exercise" component={withAuth(Exercise)} />
+                <Route path="/secret" component={withAuth(Secret)} />
               </Switch>
 						</React.Fragment>
 				</div>

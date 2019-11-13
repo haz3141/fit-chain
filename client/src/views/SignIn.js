@@ -10,13 +10,16 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
+import hikerImage from '../images/hiking.jpeg';
+
+// 'url(https://source.unsplash.com/random)'
 
 const styles = (theme) => ({
 	root: {
 		height: '100vh'
 	},
 	image: {
-		backgroundImage: 'url(https://source.unsplash.com/random)',
+		backgroundImage: `url("${hikerImage}")`,
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'cover',
 		backgroundPosition: 'center'
@@ -40,7 +43,7 @@ const styles = (theme) => ({
 	}
 });
 
-class Landing extends Component {
+class SignIn extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -153,8 +156,8 @@ class Landing extends Component {
 	}
 }
 
-Landing.propTypes = {
+SignIn.propTypes = {
 	classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Landing);
+export default withStyles(styles)(SignIn);
