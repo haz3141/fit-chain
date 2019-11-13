@@ -14,8 +14,8 @@ import API from '../utils/API';
 
 const styles = (theme) => ({
 	card: {
-		minWidth: 100,
-		maxWidth: 225,
+		minWidth: "10%",
+		maxWidth: "25%",
 		margin: 15,
 		background: 'linear-gradient(45deg, #986AC0 30%, #A086BD 90%)',
 		borderRadius: 3,
@@ -33,6 +33,9 @@ const styles = (theme) => ({
 	description: {
 		fontSize: 20
 	},
+	timestamp: {
+		fontSize: 20
+	},
 	pos: {
 		marginBottom: 12
 	}
@@ -42,7 +45,8 @@ class UserActions extends Component {
 	state = {
 		action: [],
 		description: [],
-		count: []
+		count: [],
+		timestamp: []
 	};
 
 	componentDidMount() {
@@ -60,7 +64,8 @@ class UserActions extends Component {
 					this.setState({
 						action: [ ...this.state.action, data.action ],
 						description: [ ...this.state.description, data.description ],
-						count: [ ...this.state.count, data.count ]
+						count: [ ...this.state.count, data.count ],
+						timestamp: [ ...this.state.timestamp, data.timestamp ]
 					})
 				);
 			})
@@ -69,14 +74,23 @@ class UserActions extends Component {
 
 	render() {
 		const activitySet = [ this.state ];
-		// console.log({activitySet})
+
+		const { classes } = this.props;
+
 		const actions = activitySet[0].action;
 		const descriptions = activitySet[0].description;
 		const counts = activitySet[0].count;
-		const { classes } = this.props;
-		// console.log(activitySet);
-		console.log(actions);
+		const timestamps = activitySet[0].timestamp;
+		console.log(timestamps)
 		
+		// console.log({activitySet})
+		// let resultTime = timestamps.toDateString
+		// console.log({resultTime})
+		// console.log(activitySet);
+		// console.log(actions);
+		// console.log(timestamps)
+		// timestamp |date:"MMM d, y, HH:mm"
+
 		return (
 			<Fragment>
 				{actions.map((action, index) => (
@@ -90,6 +104,9 @@ class UserActions extends Component {
 							</Typography>
 							<Typography className={classes.description} variant="body2" component="p">
 								{descriptions[index]}
+							</Typography>
+							<Typography className={classes.timestamp} variant="body2" component="p">
+								{timestamps[index]}
 							</Typography>
 						</CardContent>
 					</Card>

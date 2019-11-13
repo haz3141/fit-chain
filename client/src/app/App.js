@@ -27,13 +27,13 @@ class App extends Component {
 						<React.Fragment>
 							<Switch>
                 <Route path="/" exact component={withAuth(Dashboard)} />
-                <Route path="/about" component={About} />
                 <Route path="/signin" component={SignIn} />
+                <Route path="/about" component={About} />
                 <Route path="/signup" component={SignUp} />
-                <Route path="/login" component={Login} />
                 <Route path="/dashboard" component={withAuth(Dashboard)} />
                 <Route path="/exercise" component={withAuth(Exercise)} />
                 <Route path="/secret" component={withAuth(Secret)} />
+                <Route path="/login" component={Login} />
               </Switch>
 						</React.Fragment>
 				</div>
