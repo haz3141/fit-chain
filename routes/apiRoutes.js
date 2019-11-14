@@ -99,6 +99,11 @@ module.exports = function(app) {
       });
   });
 
+  // API GET blocks Route
+  app.get('/blocks', (req, res) => {
+    res.send('BLOCKS')
+  });
+
   // POST Route to Register ACTIVITY
   app.post("/api/activity", function(req, res) {
     // console.log(req.cookies)

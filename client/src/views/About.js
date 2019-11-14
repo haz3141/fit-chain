@@ -10,6 +10,7 @@ import reactImage from '../images/react.png';
 import nodeImage from '../images/node.png';
 import mongodbImage from '../images/mongodb.png';
 import materialImage from '../images/material.png';
+import expressImage from '../images/express.png';
 
 function About() {
 	const styleObj = {
@@ -30,7 +31,7 @@ function About() {
 				<div className="header-overlay" />
 				<Box mx="auto" className="header-content">
 					<Typography variant="h1" component="h3">
-						<img src={logo1} alt="Block Logo" width={'10%'} height={'10%'} mode="fit" />
+						<img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" />
 						{'  '}
 						FitChain
 					</Typography>
@@ -46,36 +47,27 @@ function About() {
 			<section className="section section-a">
 				<div className="container">
 					<Grid>
-						<Typography variant="h5" component="h4">
-							Create a custom store of Exercises and Activities to share with the community
-						</Typography>
-						<Typography component="p">Confirm your creations with FitChain.</Typography>
-						<Link href="/signup" variant="h6" color="primary">
-							{"Don't have an account? Sign Up"}
-						</Link>
+						<Typography color="primary" variant="h7" component="h4">
+              FitChain was created to help motivate users into staying active by rewarding the user for posting their health related activities to the FitChain blockchain network with a digital token that is distributed amongst the users of the FitChain network.
+            </Typography>
 					</Grid>
 				</div>
 			</section>
 
 			<section className="section section-b">
 				<div className="container">
-					<Grid container direction="row" justify="flex-end" alignItems="center">
-						<Grid item xs={6}>
+					<Grid container direction="row" justify="center" alignItems="center">
+						<Grid item xs={12}>
 							<Box>
-								<Typography variant="h5" component="h4">
-									Record your custom activities, strength, cardio, or calorie
-								</Typography>
-								<img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" />
-								<Typography component="p">Confirm your creations with FitChain.</Typography>
-							</Box>
-						</Grid>
-					</Grid>
-					<Grid container direction="row" justify="flex-end" alignItems="center">
-						<Grid item xs={6}>
-							<Box>
-								<Link href="/signup" variant="h6" color="primary">
-									{"Don't have an account? Sign Up"}
-								</Link>
+                <Typography color="primary" variant="h3">Start Earning with FitChain.</Typography>
+					        <Link href="/signup" variant="h6" color="primary">
+						        {"Don't have an account? Sign Up"}
+					        </Link>
+                  <br></br>
+                  <img src={logo1} alt="Block Logo" width={'11%'} height={'11%'} mode="fit" />
+                <Typography color="primary" variant="h7" component="h4">
+                  Keep track of common everyday health related data such as exercising or eating meals and receive token rewards.
+                </Typography>
 							</Box>
 						</Grid>
 					</Grid>
@@ -84,59 +76,36 @@ function About() {
 
 			<section className="section section-a">
 				<div className="container">
-					<Grid container direction="row" justify="flex-start" alignItems="center">
-						<Grid item xs={6}>
-							<Box>
-								<Typography variant="h5" component="h4">
-									This app was created to help motivate users into staying active by rewarding the
-									user for posting their health related activities to the
-								</Typography>
-							</Box>
-						</Grid>
-					</Grid>
-				</div>
-			</section>
-
-			<section className="section section-c">
-				<div className="container">
-					<Typography variant="h5" component="h4">
-						Record your custom activities, strength, cardio, or calorie
-					</Typography>
-					{/* <img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" /> */}
-					<Typography component="p">Confirm your creations with FitChain.</Typography>
-					<Link href="/signup" variant="h6" color="primary">
-						{"Don't have an account? Sign Up"}
-					</Link>
-				</div>
-			</section>
-
-			<section className="section section-a">
-				<div className="container">
-					<Typography component="p">Incorporated technologies</Typography>
+        <Typography color="primary" variant="h4" component="h4">Built With</Typography>
 					<Grid container direction="row" justify="center" alignItems="center">
 						<Grid item xs>
 							<Box>
-								<img src={reactImage} alt="React Logo" width={'60%'} height={'60%'} mode="fit" />
+								<img src={logo1} alt="Block Logo" width={'45%'} height={'45%'} mode="fit" />
 							</Box>
 						</Grid>
 						<Grid item xs>
 							<Box>
-								<img src={materialImage} alt="Material Logo" width={'60%'} height={'60%'} mode="fit" />
+								<img src={mongodbImage} alt="MongoDb Logo" width={'85%'} height={'85%'} mode="fit" />
+							</Box>
+						</Grid>
+            <Grid item xs>
+							<Box>
+								<img src={expressImage} alt="express-logo" width={'75%'} height={'75%'} mode="fit" />
 							</Box>
 						</Grid>
 						<Grid item xs>
 							<Box>
-								<img src={logo1} alt="Block Logo" width={'40%'} height={'40%'} mode="fit" />
+								<img src={reactImage} alt="React Logo" width={'55%'} height={'55%'} mode="fit" />
 							</Box>
 						</Grid>
 						<Grid item xs>
 							<Box>
-								<img src={nodeImage} alt="Node Logo" width={'60%'} height={'60%'} mode="fit" />
+								<img src={materialImage} alt="Material Logo" width={'55%'} height={'55%'} mode="fit" />
 							</Box>
 						</Grid>
 						<Grid item xs>
 							<Box>
-								<img src={mongodbImage} alt="MongoDb Logo" width={'65%'} height={'65%'} mode="fit" />
+								<img src={nodeImage} alt="Node Logo" width={'55%'} height={'55%'} mode="fit" />
 							</Box>
 						</Grid>
 					</Grid>
@@ -145,23 +114,29 @@ function About() {
 
 			<section id="aboutFitChain" className="section section-b">
 				<div className="container">
-					<Typography variant="h4" component="h4">
-						Post to community
+					<Typography color="primary" variant="h4">
+						FitChain Team
 					</Typography>
-					<img src={logo1} alt="Block Logo" width={'4%'} height={'4%'} mode="fit" />
-
-					<Typography gutterBottom component="p">
-						Developed By:
+					<Typography color="primary" variant="subtitle" gutterBottom component="h4">
+						Developers
 					</Typography>
 					<Grid container direction="row" justify="center" alignItems="center">
-						<Grid item xs={3}>
+            <Grid item xs={4}>
 							<Box mx="auto">
-								<Typography component="p">Hazael Dominguez</Typography>
+								<Typography color="primary" component="p">
+                <Link href="https://haz3141.github.io/" variant="p" color="inherit">
+						        Hazael Dominguez
+					        </Link>
+                </Typography>
 							</Box>
 						</Grid>
-						<Grid item xs={3}>
+						<Grid item xs={4}>
 							<Box mx="auto">
-								<Typography component="p">Thomas White</Typography>
+								<Typography color="primary" component="p">
+                <Link href="https://thomas-white-ucf.github.io/Portfolio" variant="p" color="inherit">
+						        Thomas White
+					        </Link>
+                </Typography>
 							</Box>
 						</Grid>
 					</Grid>
