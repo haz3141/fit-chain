@@ -20,22 +20,22 @@ import API from '../utils/API';
 
 const styles = (theme) => ({
 	card: {
-		maxWidth: "30vh",
-		maxHeight: "30vh",
-		margin: "1vh",
+		maxWidth: '30vh',
+		maxHeight: '20vh',
+		margin: '1vh',
 		background: 'linear-gradient(45deg, #986AC0 30%, #A086BD 90%)',
 		borderRadius: 3,
 		color: 'white',
 		boxShadow: '0 4px 6px 3x rgba(255, 105, 135, .3)'
 	},
 	title: {
-		fontSize: "3vh"
+		fontSize: '3vh'
 	},
 	description: {
-		fontSize: "2vh"
+		fontSize: '2vh'
 	},
 	timestamp: {
-		fontSize: "1vh"
+		fontSize: '1vh'
 	}
 });
 
@@ -113,12 +113,12 @@ class UserActions extends Component {
 
 		return (
 			<Fragment>
-				<Grid container direction="row" justify="center-start" alignItems="flex-center">
-					<Typography variant="h3" gutterBottom>
+				<Grid container direction="row" justify="flex-start" alignItems="flex-start">
+					<Typography variant="h4" gutterBottom>
 						Your Building Blocks
 					</Typography>
 				</Grid>
-				<Grid container direction="row" justify="center" alignItems="flex-center" >
+				<Grid container direction="row" justify="flex-start" alignItems="flex-start">
 					{actions.map((action, index) => (
 						<Card className={classes.card} key={index} align="center">
 							<CardContent>

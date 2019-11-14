@@ -48,8 +48,10 @@ function About() {
 				<div className="container">
 					<Grid>
 						<Typography color="primary" variant="h7" component="h4">
-              FitChain was created to help motivate users into staying active by rewarding the user for posting their health related activities to the FitChain blockchain network with a digital token that is distributed amongst the users of the FitChain network.
-            </Typography>
+							FitChain was created to help motivate users into staying active by rewarding the user for
+							posting their health related activities to the FitChain blockchain network with a digital
+							token that is distributed amongst the users of the FitChain network.
+						</Typography>
 					</Grid>
 				</div>
 			</section>
@@ -59,15 +61,18 @@ function About() {
 					<Grid container direction="row" justify="center" alignItems="center">
 						<Grid item xs={12}>
 							<Box>
-                <Typography color="primary" variant="h3">Start Earning with FitChain.</Typography>
-					        <Link href="/signup" variant="h6" color="primary">
-						        {"Don't have an account? Sign Up"}
-					        </Link>
-                  <br></br>
-                  <img src={logo1} alt="Block Logo" width={'11%'} height={'11%'} mode="fit" />
-                <Typography color="primary" variant="h7" component="h4">
-                  Keep track of common everyday health related data such as exercising or eating meals and receive token rewards.
-                </Typography>
+								<Typography color="primary" variant="h3">
+									Start Earning with FitChain.
+								</Typography>
+								<Link href="/signup" variant="h6" color="primary">
+									{"Don't have an account? Sign Up"}
+								</Link>
+								<br />
+								<img src={logo1} alt="Block Logo" width={'11%'} height={'11%'} mode="fit" />
+								<Typography color="primary" variant="h7" component="h4">
+									Keep track of common everyday health related data such as exercising or eating meals
+									and receive token rewards.
+								</Typography>
 							</Box>
 						</Grid>
 					</Grid>
@@ -76,7 +81,9 @@ function About() {
 
 			<section className="section section-a">
 				<div className="container">
-        <Typography color="primary" variant="h4" component="h4">Built With</Typography>
+					<Typography color="primary" variant="h4" component="h4">
+						Built With
+					</Typography>
 					<Grid container direction="row" justify="center" alignItems="center">
 						<Grid item xs>
 							<Box>
@@ -88,7 +95,7 @@ function About() {
 								<img src={mongodbImage} alt="MongoDb Logo" width={'85%'} height={'85%'} mode="fit" />
 							</Box>
 						</Grid>
-            <Grid item xs>
+						<Grid item xs>
 							<Box>
 								<img src={expressImage} alt="express-logo" width={'75%'} height={'75%'} mode="fit" />
 							</Box>
@@ -121,22 +128,26 @@ function About() {
 						Developers
 					</Typography>
 					<Grid container direction="row" justify="center" alignItems="center">
-            <Grid item xs={4}>
+						<Grid item xs={4}>
 							<Box mx="auto">
 								<Typography color="primary" component="p">
-                <Link href="https://haz3141.github.io/" variant="p" color="inherit">
-						        Hazael Dominguez
-					        </Link>
-                </Typography>
+									<Link href="https://haz3141.github.io/" variant="p" color="inherit">
+										Hazael Dominguez
+									</Link>
+								</Typography>
 							</Box>
 						</Grid>
 						<Grid item xs={4}>
 							<Box mx="auto">
 								<Typography color="primary" component="p">
-                <Link href="https://thomas-white-ucf.github.io/Portfolio" variant="p" color="inherit">
-						        Thomas White
-					        </Link>
-                </Typography>
+									<Link
+										href="https://thomas-white-ucf.github.io/Portfolio"
+										variant="p"
+										color="inherit"
+									>
+										Thomas White
+									</Link>
+								</Typography>
 							</Box>
 						</Grid>
 					</Grid>
