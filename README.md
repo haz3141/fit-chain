@@ -7,7 +7,7 @@
 [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/haz3141/fit-chain/)
 
 
-![Screenshot](https://raw.githubusercontent.com/haz3141/fit-chain/master/client/src/images/screenshot.PNG?token=AJHYOQ3ZV4FO7BB57RY674C5ZXJ4U)
+![Screenshot](https://raw.githubusercontent.com/haz3141/fit-chain/master/client/src/images/screenshot.PNG)
 
 ## Table of Contents
 
