@@ -5,13 +5,10 @@ import PropTypes from 'prop-types';
 import DialogBox from '../components/DialogBox';
 
 // Import Material-UI Components
-import { withStyles, Container } from '@material-ui/core';
+import { withStyles, Container, Grid } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-// import Button from '@material-ui/core/Button';
-// import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
 
 const styles = (theme) => ({
 	root: {
@@ -24,10 +21,18 @@ const styles = (theme) => ({
 		flexGrow: 1
 	},
 	container: {
-		height: 100
+		height: '3vh'
+		// ,
+		// positionBottom: '0'
 	},
 	appBar: {
-		borderRadius: 10
+		borderRadius: 10,
+		position: "fixed",
+		// left: "0",
+		bottom: "4vh",
+		width: "25%"
+		// bottom: '0',
+		// position: 'fixed'
 	}
 });
 
@@ -36,19 +41,20 @@ class Footer extends Component {
 		const { classes } = this.props;
 
 		return (
-			<Container className={classes.container} maxWidth="sm">
+			<Container className={classes.container}>
 				<div className={classes.root}>
-					<AppBar className={classes.appBar} position="static" align="center">
-						<Toolbar>
-							<Typography variant="h6" className={classes.title}>
-								<DialogBox />
-								Create Activity
-							</Typography>
-							{/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-							<MenuIcon />
-						</IconButton> */}
-						</Toolbar>
-					</AppBar>
+					<Grid container item justify="center">
+						
+							<AppBar className={classes.appBar} position="static" align="center">
+								<Toolbar>
+									<Typography variant="h6" className={classes.title}>
+										<DialogBox />
+										Create Activity
+									</Typography>
+								</Toolbar>
+							</AppBar>
+						
+					</Grid>
 				</div>
 			</Container>
 		);
@@ -60,26 +66,3 @@ Footer.propTypes = {
 };
 
 export default withStyles(styles)(Footer);
-
-// =
-
-// ===
-
-// ===== END
-
-// const index = category ? muscles.findIndex((group) => group === category) + 1 : 0;
-// const onIndexSelect = (e, index) => {
-// 	onSelect(index === 0 ? '' : muscles[index - 1]);
-// }
-// <Paper>
-// 	<Tabs
-// 		value={0}
-// onChange={onIndexSelect}
-// indicatorColor="primary"
-// textColor="primary"
-// centered
-// 	>
-// 		<Tab label="All" />
-// 		{/* {muscles.map((group) => <Tab key={group} label={group} />)} */}
-// 	</Tabs>
-// </Paper>

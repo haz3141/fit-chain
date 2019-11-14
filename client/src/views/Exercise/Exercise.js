@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 // import { Switch, Route } from 'react-router-dom';
 
 // Import Layouts
-import { ExerciseHeader } from "./layouts/ExerciseHeader";
+// import { ExerciseHeader } from "./layouts/ExerciseHeader";
 import { ExerciseFooter } from "./layouts/ExerciseFooter";
 
 // Import Local Component
@@ -43,14 +43,14 @@ class Exercise extends Component {
 		}));
   }
 
-  handleExerciseCreate = exercise => {
-    this.setState(({ exercises }) => ({
-      exercises: [ 
-        ...exercises,
-        exercise
-      ]
-    }))
-  }
+  // handleExerciseCreate = exercise => {
+  //   this.setState(({ exercises }) => ({
+  //     exercises: [ 
+  //       ...exercises,
+  //       exercise
+  //     ]
+  //   }))
+  // }
   
   render() {
     const exercises = this.getExercisesByMuscles();
@@ -58,10 +58,10 @@ class Exercise extends Component {
 
     return (
       <Fragment>
-        <ExerciseHeader 
+        {/* <ExerciseHeader 
           onExerciseCreate={this.handleExerciseCreate}
           muscles={muscles}
-        />
+        /> */}
         <Exercises
           exercise={exercise}
           onSelect={this.handleExerciseSelect}
