@@ -3,6 +3,7 @@ const express = require('express');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 // Require Dot Env
 require('dotenv').config();
@@ -17,6 +18,14 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use(logger('dev'));
 app.use(cookieParser());
+app.use(cors());
+
+// // Enable CORS
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "http://localhost:3000/*"); // update to match the domain you will make the request from
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   next();
+// });
 
 // Set MongoDB Path
 const MONGODB_URI = process.env.MONGODB_URI;
