@@ -11,6 +11,7 @@ import { Exercise } from "../views/Exercise/Exercise";
 import SignIn from "../views/SignIn"
 import SignUp from "../views/SignUp"
 import About from '../views/About';
+import About_test from '../views/About_test';
 
 // Import Utils
 import { withAuth } from "../utils/withAuth";
@@ -34,6 +35,7 @@ class App extends Component {
                 <Route path="/exercise" component={withAuth(Exercise)} />
                 <Route path="/secret" component={withAuth(Secret)} />
                 <Route path="/login" component={Login} />
+                <Route path="/about-test" component={About_test} />
               </Switch>
 						</React.Fragment>
 				</div>
