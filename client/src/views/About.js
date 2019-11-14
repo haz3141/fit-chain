@@ -1,100 +1,70 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
 
-// import Avatar from '@material-ui/core/Avatar';
-// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-// import Button from '@material-ui/core/Button';
-// import TextField from '@material-ui/core/TextField';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Link from '@material-ui/core/Link';
-// import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core';
-import PropTypes from 'prop-types';
-import backImage from '../images/bikebridge.jpeg';
+import './About.css';
 
-import { classes } from "./about.css"
+import { Typography, Button, Box, Link } from '@material-ui/core';
+// , Paper
 
-console.log(classes)
-// ,
-// 	image: {
-// 		backgroundImage: `url("${backImage}")`,
-// 		backgroundRepeat: 'no-repeat',
-// 		backgroundSize: 'cover',
-// 		backgroundPosition: 'center'
-// 	}
+import blockLogo from '../images/blocklogo.png';
 
-const styles = (theme) => ({
-	root: {
-		margin: 0,
-		height: '100vh',
-		backgroundImage: `url("${backImage}")`,
-		backgroundRepeat: 'no-repeat',
-		backgroundSize: 'cover',
-		backgroundPosition: 'center'
-	},
-	paper: {
-		margin: theme.spacing(8, 4),
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		backgroundColor: 'transparent'
-	},
-	avatar: {
-		margin: theme.spacing(1),
-		backgroundColor: theme.palette.secondary.main
-	},
-	form: {
-		width: '100%', // Fix IE 11 issue.
-		marginTop: theme.spacing(1)
-	},
-	submit: {
-		margin: theme.spacing(3, 0, 2)
-	}
-});
 
-class About extends Component {
-	constructor() {
-		super();
-		// Sets Default Message
-		this.state = {
-			message: 'Loading...'
-		};
-	}
+function About() {
+	const styleObj = {
+		background: '#3f51b5',
+		fontSize: '1rem',
+		color: '#ffffff',
+		textAlign: 'center'
+	};
+	const logo1 = blockLogo;
 
-	componentDidMount() {
-		// GET Message from Server Using Fetch API
-		this.setState({
-			message: 'Welcome to FitChain!'
-		});
-	}
+	// className={classes.root}
+	return (
+		<Fragment>
+			<header className="v-header container">
+				<div className="fullscreen-video-wrap image" />
 
-	render() {
-		const { classes } = this.props;
+				<div className="header-overlay" />
+				<Box mx="auto" className="header-content">
+					{/* <div className="header-content"> */}
+					{/* <Paper > */}
+					<Typography variant="h3" component="h3">
+						Welcome to FitChain!
+					</Typography>
+					<img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" />
+					<Typography component="p">Confirm your creations with FitChain. Encourage More</Typography>
+					{/* </Paper> */}
 
-		return (
-			<Grid container component="main" className={classes.root}>
-				<CssBaseline />
-				{/* <Grid item xs={false} sm={4} md={7} /> */}
-				{/* square */}
-				<Grid item xs={12} sm={8} md={5} >
-					<div className={classes.paper}>
-						<Typography component="h1" variant="h4">
-							FitChain
-							<br></br>
-							<Link href="/signup" variant="h6" color="inherit">
-								{"Don't have an account? Sign Up"}
-							</Link>
-						</Typography>
-					</div>
-				</Grid>
-			</Grid>
-		);
-	}
+					<Button href="#jumpFooterTag" style={styleObj}>
+						Read More
+					</Button>
+					{/* </div> */}
+				</Box>
+			</header>
+
+			<section className="section section-a">
+				<div className="container">
+					<Typography variant="h5" component="h4">
+						Record your custom activities, strength, cardio, or calorie
+					</Typography>
+					<img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" />
+					<Typography component="p">Confirm your creations with FitChain. Encourage More</Typography>
+					<Link href="/signup" variant="h6" color="primary">
+						{"Don't have an account? Sign Up"}
+					</Link>
+				</div>
+			</section>
+
+			<section id="jumpFooterTag" className="section section-b">
+				<div className="container">
+					<Typography variant="h4" component="h4">
+						Post to community
+					</Typography>
+					<img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" />
+					<Typography component="p">Confirm your creations with FitChain. Encourage More</Typography>
+				</div>
+			</section>
+		</Fragment>
+	);
 }
 
-About.propTypes = {
-	classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(About);
+export default About;

@@ -2,7 +2,7 @@
 import React, { Component, Fragment } from 'react';
 
 // Import Material-UI Components
-import Typography from '@material-ui/core/Typography';
+import { Typography, Grid } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 // import CardActions from '@material-ui/core/CardActions';
@@ -14,8 +14,8 @@ import API from '../utils/API';
 
 const styles = (theme) => ({
 	card: {
-		minWidth: "10%",
-		maxWidth: "25%",
+		minWidth: '10%',
+		maxWidth: '25%',
 		margin: 15,
 		background: 'linear-gradient(45deg, #986AC0 30%, #A086BD 90%)',
 		borderRadius: 3,
@@ -53,8 +53,8 @@ class UserActions extends Component {
 		this.loadActivities();
 	}
 
-	// TODO: NEED TO FILTER IN THE API FUNCTION for current USER email / _id.. 
-	// need the res =>>>  = return the associated email profile/activities 
+	// TODO: NEED TO FILTER IN THE API FUNCTION for current USER email / _id..
+	// need the res =>>>  = return the associated email profile/activities
 	loadActivities = () => {
 		API.getUserActions()
 			.then((res) => {
@@ -81,8 +81,8 @@ class UserActions extends Component {
 		const descriptions = activitySet[0].description;
 		const counts = activitySet[0].count;
 		const timestamps = activitySet[0].timestamp;
-		console.log(timestamps)
-		
+		console.log(timestamps);
+
 		// console.log({activitySet})
 		// let resultTime = timestamps.toDateString
 		// console.log({resultTime})
@@ -93,24 +93,31 @@ class UserActions extends Component {
 
 		return (
 			<Fragment>
-				{actions.map((action, index) => (
-					<Card className={classes.card} key={index} align="center">
-						<CardContent>
-							<Typography className={classes.title} gutterBottom>
-								{actions[index]}
-							</Typography>
-							<Typography variant="h5" component="h2" color="textSecondary">
-								{counts[index]}
-							</Typography>
-							<Typography className={classes.description} variant="body2" component="p">
-								{descriptions[index]}
-							</Typography>
-							<Typography className={classes.timestamp} variant="body2" component="p">
-								{timestamps[index]}
-							</Typography>
-						</CardContent>
-					</Card>
-				))}
+				<Grid direction="row" justify="center" alignItems="center">
+					<Typography variant="h3" gutterBottom>
+						Your Building Blocks
+					</Typography>
+				</Grid>
+				<Grid>
+					{actions.map((action, index) => (
+						<Card className={classes.card} key={index} align="center">
+							<CardContent>
+								<Typography className={classes.title} gutterBottom>
+									{actions[index]}
+								</Typography>
+								<Typography variant="h5" component="h2" color="textSecondary">
+									{counts[index]}
+								</Typography>
+								<Typography className={classes.description} variant="body2" component="p">
+									{descriptions[index]}
+								</Typography>
+								<Typography className={classes.timestamp} variant="body2" component="p">
+									{timestamps[index]}
+								</Typography>
+							</CardContent>
+						</Card>
+					))}
+				</Grid>
 			</Fragment>
 		);
 	}

@@ -39,7 +39,7 @@ function withAuth(ComponentToProtect) {
         return null;
       }
       if (redirect) {
-        return <Redirect to="/signin" />
+        return <Redirect to="/about" />
       }
       return (
         <React.Fragment>
