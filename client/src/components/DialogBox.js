@@ -14,6 +14,8 @@ import PropTypes from 'prop-types';
 import AddIcon from '@material-ui/icons/Add';
 import { withStyles } from '@material-ui/styles';
 
+import axios from 'axios';
+
 // Styles to be passed in as Proptypes when rendering the component
 const styles = (theme) => ({
 	formControl: {
@@ -51,7 +53,18 @@ class DialogBox extends Component {
 	};
 
 	onSubmit = (event) => {
-		event.preventDefault();
+    event.preventDefault();
+    const payload = {
+      "data": {
+        "action": this.state.activity.action,
+        "description": this.state.activity.description,
+        "count": this.state.activity.count
+      }
+    };
+
+    axios.post('http://localhost:8080/mine', payload);
+    // let xhr = createCORSRequest('GET', 'http://localhost:8080');
+    // xhr.send();
 		fetch('/api/activity', {
 			method: 'POST',
 			body: JSON.stringify(this.state),
