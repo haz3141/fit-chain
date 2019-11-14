@@ -44,7 +44,7 @@ class ButtonLinks extends Component {
 							<Button color="inherit" component={Link} to="/dashboard/profile">
 								Profile
 							</Button>
-							<Button color="inherit" component={Link} to="/exercise">
+							<Button color="inherit" component={Link} to="/dashboard/research">
 								Building Blocks
 							</Button>
 						</Box>

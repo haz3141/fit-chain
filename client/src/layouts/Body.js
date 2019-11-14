@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Grid, Box } from '@material-ui/core';
 import ActivityCards from '../components/ActivityCards';
 import UserActions from '../components/UserActions';
+import Research from '../components/Research';
 
 import { withStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
@@ -45,6 +46,10 @@ class Body extends Component {
 								<Route path="/dashboard/profile">
 									<UserActions />
 									<h1>PROFILE</h1>
+								</Route>
+								<Route path="/dashboard/research">
+									<Research />
+									<h1>RESEARCH</h1>
 								</Route>
 							</Switch>
 						</Fragment>

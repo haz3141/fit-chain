@@ -7,7 +7,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Login } from "../views/Login";
 import { Secret } from "../views/Secret";
 import { Dashboard } from "../views/Dashboard";
-import { Exercise } from "../views/Exercise/Exercise";
+// import { Exercise } from "../views/Exercise/Exercise";
 import SignIn from "../views/SignIn"
 import SignUp from "../views/SignUp"
 import About from '../views/About';
@@ -31,7 +31,7 @@ class App extends Component {
                 <Route path="/about" component={About} />
                 <Route path="/signup" component={SignUp} />
                 <Route path="/dashboard" component={withAuth(Dashboard)} />
-                <Route path="/exercise" component={withAuth(Exercise)} />
+                {/* <Route path="/exercise" component={withAuth(Exercise)} /> */}
                 <Route path="/secret" component={withAuth(Secret)} />
                 <Route path="/login" component={Login} />
               </Switch>
