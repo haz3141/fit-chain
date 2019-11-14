@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import './About.css';
+import './about.css';
 
 import { Typography, Button, Grid, Box, Link } from '@material-ui/core';
 // , Paper
