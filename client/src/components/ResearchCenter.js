@@ -8,10 +8,11 @@ import { ListItem, ListItemText } from '@material-ui/core';
 // Define Styles
 const styles = {
 	Paper: {
-		padding: 20,
-		marginTop: 10,
-		marginBottom: 10,
-		height: 500,
+		padding: "2vh",
+		marginTop: "2vh",
+		marginBottom: "2vh",
+    height: "50vh",
+    width: "50vh",
 		overflowY: 'auto'
 	}
 }

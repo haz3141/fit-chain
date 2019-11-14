@@ -41,7 +41,7 @@ class Research extends Component {
 		const exercises = this.getExercisesByMuscles();
 		const { category, exercise } = this.state;
 
-        console.log("RESEARCH RENDER >>  category= ", category)
+        // console.log("Research render >  category = ", category)
 		return (
 			<Fragment>
 				<ResearchCenter

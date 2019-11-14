@@ -47,7 +47,7 @@ function About() {
 			<section className="section section-a">
 				<div className="container">
 					<Grid>
-						<Typography color="primary" variant="h7" component="h4">
+						<Typography color="primary" variant="h6" component="h4">
 							FitChain was created to help motivate users into staying active by rewarding the user for
 							posting their health related activities to the FitChain blockchain network with a digital
 							token that is distributed amongst the users of the FitChain network.

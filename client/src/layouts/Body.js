@@ -37,19 +37,19 @@ class Body extends Component {
 							<Switch>
 								<Route exact path="/">
 									<ActivityCards />
-									<h1>/</h1>
+									
 								</Route>
 								<Route exact path="/dashboard">
-									<ActivityCards />
 									<h1>DASHBOARD</h1>
+									<ActivityCards />
 								</Route>
 								<Route path="/dashboard/profile">
 									<UserActions />
-									<h1>PROFILE</h1>
+									
 								</Route>
 								<Route path="/dashboard/research">
-									<Research />
 									<h1>RESEARCH</h1>
+									<Research />
 								</Route>
 							</Switch>
 						</Fragment>
