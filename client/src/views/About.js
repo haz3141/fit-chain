@@ -53,6 +53,58 @@ function About() {
 				</div>
 			</section>
 
+			<section className="section section-b">
+				<div className="container">
+					<Typography variant="h5" component="h4">
+						Record your custom activities, strength, cardio, or calorie
+					</Typography>
+					{/* <img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" /> */}
+					<Typography component="p">Confirm your creations with FitChain.</Typography>
+					<Link href="/signup" variant="h6" color="primary">
+						{"Don't have an account? Sign Up"}
+					</Link>
+				</div>
+			</section>
+
+			<section className="section section-a">
+				<div className="container">
+					<Typography variant="h5" component="h4">
+						Record your custom activities, strength, cardio, or calorie
+					</Typography>
+					{/* <img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" /> */}
+					<Typography component="p">Confirm your creations with FitChain.</Typography>
+					<Link href="/signup" variant="h6" color="primary">
+						{"Don't have an account? Sign Up"}
+					</Link>
+				</div>
+			</section>
+
+			<section className="section section-c">
+				<div className="container">
+					<Typography variant="h5" component="h4">
+						Record your custom activities, strength, cardio, or calorie
+					</Typography>
+					{/* <img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" /> */}
+					<Typography component="p">Confirm your creations with FitChain.</Typography>
+					<Link href="/signup" variant="h6" color="primary">
+						{"Don't have an account? Sign Up"}
+					</Link>
+				</div>
+			</section>
+
+			<section className="section section-a">
+				<div className="container">
+					<Typography variant="h5" component="h4">
+						Record your custom activities, strength, cardio, or calorie
+					</Typography>
+					{/* <img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" /> */}
+					<Typography component="p">Confirm your creations with FitChain.</Typography>
+					<Link href="/signup" variant="h6" color="primary">
+						{"Don't have an account? Sign Up"}
+					</Link>
+				</div>
+			</section>
+
 			<section id="jumpFooterTag" className="section section-b">
 				<div className="container">
 					<Typography variant="h4" component="h4">
@@ -68,7 +120,7 @@ function About() {
 						</Grid>
 						<Grid item xs={3}>
 							<Box mx="auto">
-								<Typography component="p">Hazael Dominguez</Typography>
+								<Typography component="p">Thomas White</Typography>
 							</Box>
 						</Grid>
 					</Grid>
