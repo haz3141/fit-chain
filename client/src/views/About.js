@@ -22,8 +22,8 @@ function About() {
 	};
 	const logo1 = blockLogo;
 	const linkStyle = {
-		color: "#ffffff"
-	}
+		color: '#ffffff'
+	};
 
 	// className={classes.root}
 	return (
@@ -32,19 +32,28 @@ function About() {
 				<div className="fullscreen-video-wrap image" />
 
 				<div className="header-overlay" />
-				<Box mx="auto" className="header-content">
-					<Typography variant="h1" component="h3">
-						<img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" />
-						{'  '}
-						FitChain
-					</Typography>
-					<Box p={1} />
-					<Typography>Building Blocks to a Healthy World</Typography>
-
-					<Button href="#aboutFitChain" style={styleObj}>
-						Read More
-					</Button>
-				</Box>
+				<Grid container className="header-content">
+					<Grid container direction="row" justify="center" alignItems="center">
+						<Grid item xs={12}>
+							<Box p={2}>
+								<img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" />
+							</Box>
+							<Typography variant="h1" component="h3">
+								FitChain
+							</Typography>
+						</Grid>
+						<Grid item xs={12}>
+							<Typography>Building Blocks to a Healthy World</Typography>
+						</Grid>
+						{/* <Grid item>
+							</Grid> */}
+						<Button href="#aboutFitChain" style={styleObj}>
+							Read More
+						</Button>
+					</Grid>
+					{/* <Grid container direction="column"> */}
+					{/* </Grid> */}
+				</Grid>
 			</header>
 
 			<section className="section section-a">
