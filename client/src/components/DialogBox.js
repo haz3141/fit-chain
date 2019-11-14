@@ -141,7 +141,7 @@ class DialogBox extends Component {
 								className={classes.FormControl}
 							/>
 							<Button onClick={this.onSubmit} color="primary" variant="contained">
-								Create Workout
+								Create Activity
 							</Button>
 						</form>
 					</DialogContent>
