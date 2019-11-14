@@ -39,18 +39,15 @@ const styles = (theme) => ({
 	}
 });
 
-// BOX SHADOW NOT IN ViewHeights
-// ,
+// BOX SHADOW NOT IN ViewHeights,
 // bullet: {
 // 	display: 'inline-block',
 // 	margin: '0 2px',
 // 	transform: 'scale(0.8)'
-// }
-// ,
+// },
 // pos: {
 // 	marginBottom: 12
-// }
-// ,
+// },
 // title: {
 // 	fontSize: 24
 // },
@@ -73,8 +70,7 @@ class UserActions extends Component {
 		this.loadActivities();
 	}
 
-	// TODO: NEED TO FILTER IN THE API FUNCTION for current USER email / _id..
-	// need the res =>>>  = return the associated email profile/activities
+	// Return the associated email profile/activities
 	loadActivities = () => {
 		API.getUserActions()
 			.then((res) => {

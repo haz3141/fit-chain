@@ -16,12 +16,6 @@ const styles = (theme) => ({
 });
 
 class Body extends Component {
-	// TODO : CONDITIONALLY RENDER NESTED, from the Header
-	// MAYBE PASS THIS UP TO BUTTONLINKS in the header.?
-	// Note- changed body to class based component
-	// TODO: Note - for now, ActivityCards are Dashboard showing all.
-	// TODO: Need Portfolio to render from button links, so we can reuse header and footer..
-
 	render() {
 		const { classes } = this.props;
 		return (
@@ -37,18 +31,17 @@ class Body extends Component {
 							<Switch>
 								<Route exact path="/">
 									<ActivityCards />
-									
 								</Route>
 								<Route exact path="/dashboard">
-									<h1>DASHBOARD</h1>
 									<ActivityCards />
+									{/* <h1>DASHBOARD</h1> */}
 								</Route>
 								<Route path="/dashboard/profile">
 									<UserActions />
-									
+									<h1>Stay Active! Your blocks are shared with the community</h1>
 								</Route>
 								<Route path="/dashboard/research">
-									<h1>RESEARCH</h1>
+									<h1>Research new Activities</h1>
 									<Research />
 								</Route>
 							</Switch>
@@ -70,27 +63,3 @@ Body.propTypes = {
 };
 
 export default withStyles(styles)(Body);
-
-// =========
-// state = {
-// 	currentPage: 'Dashboard'
-// };
-
-// handlePageChange = (page) => {
-// 	this.setState({ currentPage: page });
-// };
-
-// renderPage = () => {
-// 	if (this.state.currentPage === 'Dashboard') {
-// 		return <ActivityCards />;
-// 	} else if (this.state.currentPage === 'Profile') {
-// 		return <UserActions />;
-// 	} else {
-// 		return <ButtonLinks />;
-// 	}
-// };
-
-// <NavTabs
-// 	currentPage={this.state.currentPage}
-// 	handlePageChange={this.handlePageChange} />
-// {this.renderPage()}

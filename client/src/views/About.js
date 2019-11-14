@@ -21,6 +21,9 @@ function About() {
 		margin: 0
 	};
 	const logo1 = blockLogo;
+	const linkStyle = {
+		color: "#ffffff"
+	}
 
 	// className={classes.root}
 	return (
@@ -61,11 +64,11 @@ function About() {
 					<Grid container direction="row" justify="center" alignItems="center">
 						<Grid item xs={12}>
 							<Box>
-								<Typography color="primary" variant="h3">
+								<Typography gutterBottom color="primary" variant="h3">
 									Start Earning with FitChain.
 								</Typography>
-								<Link href="/signup" variant="h6" color="primary">
-									{"Don't have an account? Sign Up"}
+								<Link href="/signup" variant="h6" style={linkStyle}>
+									"Don't have an account? Sign Up"
 								</Link>
 								<br />
 								<img src={logo1} alt="Block Logo" width={'11%'} height={'11%'} mode="fit" />

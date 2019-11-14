@@ -9,6 +9,7 @@ import { Typography, Box, Grid } from '@material-ui/core';
 import blockLogo from '../images/blocklogo.png';
 
 // from FitChain Typography  style={{ flex: 1 }}
+import AccessibilityIcon from '@material-ui/icons/Accessibility';
 
 class ButtonLinks extends Component {
 	render() {
@@ -18,9 +19,10 @@ class ButtonLinks extends Component {
 				<Grid container direction="row" alignItems="center">
 					<Grid item xs>
 						<Box display="flex" justifyContent="flex-start">
-							<Typography variant="h5" color="inherit" style={{ flex: 1 }}>
+							{/* <Typography variant="h5" color="inherit" style={{ flex: 1 }}>
 								Workout Nav Bar
-							</Typography>
+							</Typography> */}
+							<AccessibilityIcon />
 						</Box>
 					</Grid>
 
