@@ -2,11 +2,10 @@ import React, { Fragment } from 'react';
 
 import './About.css';
 
-import { Typography, Button, Box, Link } from '@material-ui/core';
+import { Typography, Button, Grid, Box, Link } from '@material-ui/core';
 // , Paper
 
 import blockLogo from '../images/blocklogo.png';
-
 
 function About() {
 	const styleObj = {
@@ -46,8 +45,8 @@ function About() {
 					<Typography variant="h5" component="h4">
 						Record your custom activities, strength, cardio, or calorie
 					</Typography>
-					<img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" />
-					<Typography component="p">Confirm your creations with FitChain. Encourage More</Typography>
+					{/* <img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" /> */}
+					<Typography component="p">Confirm your creations with FitChain.</Typography>
 					<Link href="/signup" variant="h6" color="primary">
 						{"Don't have an account? Sign Up"}
 					</Link>
@@ -60,7 +59,19 @@ function About() {
 						Post to community
 					</Typography>
 					<img src={logo1} alt="Block Logo" width={'9%'} height={'9%'} mode="fit" />
-					<Typography component="p">Confirm your creations with FitChain. Encourage More</Typography>
+					<Typography gutterBottom component="p">Developed By:</Typography>
+					<Grid container direction="row" justify="center" alignItems="center">
+						<Grid item xs={3}>
+							<Box mx="auto">
+								<Typography component="p">Hazael Dominguez</Typography>
+							</Box>
+						</Grid>
+						<Grid item xs={3}>
+							<Box mx="auto">
+								<Typography component="p">Hazael Dominguez</Typography>
+							</Box>
+						</Grid>
+					</Grid>
 				</div>
 			</section>
 		</Fragment>
