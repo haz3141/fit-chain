@@ -7,7 +7,7 @@
 [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/haz3141/fit-chain/)
 
 
-![Screenshot](https://github.com/jdmedlock/meteorite/blob/development/docs/me_screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/haz3141/fit-chain/master/client/src/images/screenshot.PNG?token=AJHYOQ3ZV4FO7BB57RY674C5ZXJ4U)
 
 ## Table of Contents
 
@@ -86,7 +86,7 @@ This app has the following dependencies
 | prop-types     | Runtime     | Type checking for props | N/a |
 | react          | Runtime     | UI Library  | N/a           |
 | react-dom      | Runtime     | DOM renderer for React | N/a |
-| express | Runtiime | Web Framework for Node | N/a |
+| express | Runtime | Web Framework for Node | N/a |
 | logger | Runtime    | Logging Library | N/a  |
 | mongoose     | Runtime     | MongoDB Object Modeling Tool | N/a |
 | cookie-parser | Runtime | Express Middleware to Parse Cookie | N/a |
@@ -109,7 +109,9 @@ GitHub repo contains the necessary files to start the local blockchain node.
 The component structure of the FitChain application is shown in the
 following diagram.
 
-![React Component Structure](https://github.com/jdmedlock/meteorite/blob/development/docs/me_component_structure.png)
+* Coming Soon...
+
+<!-- ![React Component Structure](https://github.com/jdmedlock/meteorite/blob/development/docs/me_component_structure.png) -->
 
 ## Frequently Asked Questions
 
