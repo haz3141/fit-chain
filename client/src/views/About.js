@@ -37,7 +37,7 @@ function About() {
 					<Box p={1} />
 					<Typography>Building Blocks to a Healthy World</Typography>
 
-					<Button href="#jumpFooterTag" style={styleObj}>
+					<Button href="#aboutFitChain" style={styleObj}>
 						Read More
 					</Button>
 				</Box>
@@ -143,7 +143,7 @@ function About() {
 				</div>
 			</section>
 
-			<section id="jumpFooterTag" className="section section-b">
+			<section id="aboutFitChain" className="section section-b">
 				<div className="container">
 					<Typography variant="h4" component="h4">
 						Post to community
