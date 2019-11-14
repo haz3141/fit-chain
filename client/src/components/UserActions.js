@@ -12,34 +12,54 @@ import PropTypes from 'prop-types';
 
 import API from '../utils/API';
 
+// display: 'block',
+// width: '30vw',
+// transitionDuration: '0.3s',
+// height: '45vw'
+// minWidth: "5vh",
+
 const styles = (theme) => ({
 	card: {
-		minWidth: '10%',
-		maxWidth: '25%',
-		margin: 15,
+		maxWidth: "30vh",
+		maxHeight: "30vh",
+		margin: "1vh",
 		background: 'linear-gradient(45deg, #986AC0 30%, #A086BD 90%)',
 		borderRadius: 3,
 		color: 'white',
 		boxShadow: '0 4px 6px 3x rgba(255, 105, 135, .3)'
 	},
-	bullet: {
-		display: 'inline-block',
-		margin: '0 2px',
-		transform: 'scale(0.8)'
-	},
 	title: {
-		fontSize: 24
+		fontSize: "3vh"
 	},
 	description: {
-		fontSize: 20
+		fontSize: "2vh"
 	},
 	timestamp: {
-		fontSize: 20
-	},
-	pos: {
-		marginBottom: 12
+		fontSize: "1vh"
 	}
 });
+
+// BOX SHADOW NOT IN ViewHeights
+// ,
+// bullet: {
+// 	display: 'inline-block',
+// 	margin: '0 2px',
+// 	transform: 'scale(0.8)'
+// }
+// ,
+// pos: {
+// 	marginBottom: 12
+// }
+// ,
+// title: {
+// 	fontSize: 24
+// },
+// description: {
+// 	fontSize: 20
+// },
+// timestamp: {
+// 	fontSize: 20
+// },
 
 class UserActions extends Component {
 	state = {
@@ -81,7 +101,7 @@ class UserActions extends Component {
 		const descriptions = activitySet[0].description;
 		const counts = activitySet[0].count;
 		const timestamps = activitySet[0].timestamp;
-		console.log(timestamps);
+		// console.log(timestamps);
 
 		// console.log({activitySet})
 		// let resultTime = timestamps.toDateString
@@ -93,23 +113,23 @@ class UserActions extends Component {
 
 		return (
 			<Fragment>
-				<Grid direction="row" justify="center" alignItems="center">
+				<Grid container direction="row" justify="center-start" alignItems="flex-center">
 					<Typography variant="h3" gutterBottom>
 						Your Building Blocks
 					</Typography>
 				</Grid>
-				<Grid>
+				<Grid container direction="row" justify="center" alignItems="flex-center" >
 					{actions.map((action, index) => (
 						<Card className={classes.card} key={index} align="center">
 							<CardContent>
-								<Typography className={classes.title} gutterBottom>
-									{actions[index]}
+								<Typography gutterBottom className={classes.description} variant="body2" component="p">
+									{descriptions[index]}
 								</Typography>
 								<Typography variant="h5" component="h2" color="textSecondary">
 									{counts[index]}
 								</Typography>
-								<Typography className={classes.description} variant="body2" component="p">
-									{descriptions[index]}
+								<Typography className={classes.title} gutterBottom>
+									{actions[index]}
 								</Typography>
 								<Typography className={classes.timestamp} variant="body2" component="p">
 									{timestamps[index]}
