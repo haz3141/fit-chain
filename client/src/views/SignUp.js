@@ -69,7 +69,7 @@ class SignUp extends Component {
 		})
 			.then((res) => {
 				if (res.status === 200) {
-					this.props.history.push('/');
+					this.props.history.push('/dashboard');
 				} else {
 					const error = new Error(res.error);
 					throw error;
@@ -143,7 +143,7 @@ class SignUp extends Component {
 								</Grid>
 								<Grid item>
 									<Link href="/signin" variant="body2">
-										{"Don't have an account? Sign In"}
+										{"Already have an account? Sign In"}
 									</Link>
 								</Grid>
 							</Grid>
