@@ -12,18 +12,17 @@ import mongodbImage from '../images/mongodb.png';
 import materialImage from '../images/material.png';
 import expressImage from '../images/express.png';
 
+import {Header} from '../layouts/Header';
+
 function About() {
 	const styleObj = {
 		background: '#3f51b5',
 		fontSize: '1rem',
 		color: '#ffffff',
 		textAlign: 'center',
-		margin: 0
+		margin: '0.5rem'
 	};
 	const logo1 = blockLogo;
-	const linkStyle = {
-		color: '#ffffff'
-	};
 
 	// className={classes.root}
 	return (
@@ -76,9 +75,17 @@ function About() {
 								<Typography gutterBottom color="primary" variant="h3">
 									Start Earning with FitChain.
 								</Typography>
-								<Link href="/signup" variant="h6" style={linkStyle}>
-									"Don't have an account? Sign Up"
-								</Link>
+								<Button href="/signin" style={styleObj}>
+									
+									<Typography color="inherit" variant="button">
+										Login
+									</Typography>
+								</Button>
+								<Button href="/signup" style={styleObj}>
+									<Typography color="inherit" variant="button">
+										Sign Up
+									</Typography>
+								</Button>
 								<br />
 								<img src={logo1} alt="Block Logo" width={'11%'} height={'11%'} mode="fit" />
 								<Typography color="primary" variant="h7" component="h4">
