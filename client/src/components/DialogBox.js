@@ -19,7 +19,7 @@ import axios from 'axios';
 // Styles to be passed in as Proptypes when rendering the component
 const styles = (theme) => ({
 	formControl: {
-		minWidth: "500"
+		minWidth: '500'
 	},
 	selectEmpty: {
 		marginTop: 2
@@ -63,8 +63,7 @@ class DialogBox extends Component {
 		};
 
 		axios.post('http://localhost:8080/mine', payload);
-		// let xhr = createCORSRequest('GET', 'http://localhost:8080');
-		// xhr.send();
+
 		fetch('/api/activity', {
 			method: 'POST',
 			body: JSON.stringify(this.state),
@@ -74,8 +73,6 @@ class DialogBox extends Component {
 		})
 			.then((res) => {
 				if (res) {
-					// this.props.history.push('/');
-					// console.log("OnSubmit worked....")
 					this.setState({
 						open: false,
 						activity: {
@@ -84,7 +81,8 @@ class DialogBox extends Component {
 							count: ''
 						}
 					});
-					return res;
+
+					return window.location.reload(true);
 				} else {
 					const error = new Error(res.error);
 					throw error;

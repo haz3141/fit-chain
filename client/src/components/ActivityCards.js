@@ -2,7 +2,7 @@
 import React, { Component, Fragment } from 'react';
 
 // Import Material-UI Components
-import { Typography, Grid } from '@material-ui/core';
+import { Typography, Grid, Box } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 // import CardActions from '@material-ui/core/CardActions';
@@ -73,9 +73,11 @@ class ActivityCards extends Component {
 		return (
 			<Fragment>
 				<Grid container direction="row" justify="flex-start" alignItems="flex-start">
-					<Typography variant="h4" gutterBottom>
-						Community Activity Blocks
-					</Typography>
+					<Box mt={5}>
+						<Typography variant="h4" gutterBottom>
+							Community Activity Blocks
+						</Typography>
+					</Box>
 				</Grid>
 				<Grid container direction="row" justify="flex-start" alignItems="flex-start">
 					{actions.map((action, index) => (
