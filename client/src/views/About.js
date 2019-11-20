@@ -3,16 +3,13 @@ import React, { Fragment } from 'react';
 import './about.css';
 
 import { Typography, Button, Grid, Box, Link } from '@material-ui/core';
-// , Paper
-
+import GitHubIcon from '@material-ui/icons/GitHub';
 import blockLogo from '../images/blocklogo.png';
 import reactImage from '../images/react.png';
 import nodeImage from '../images/node.png';
 import mongodbImage from '../images/mongodb.png';
 import materialImage from '../images/material.png';
 import expressImage from '../images/express.png';
-
-import {Header} from '../layouts/Header';
 
 function About() {
 	const styleObj = {
@@ -24,7 +21,13 @@ function About() {
 	};
 	const logo1 = blockLogo;
 
-	// className={classes.root}
+	const gitlinks = {
+		color: '#3f51b5',
+		textAlign: 'center',
+		fontSize: '1rem',
+		fontWeight: "bold"
+	}
+
 	return (
 		<Fragment>
 			<header className="v-header container">
@@ -57,43 +60,43 @@ function About() {
 
 			<section className="section section-a">
 				<div className="container">
-					<Grid>
-						<Typography color="primary" variant="h6" component="h4">
-							FitChain was created to help motivate users into staying active by rewarding the user for
-							posting their health related activities to the FitChain blockchain network with a digital
-							token that is distributed amongst the users of the FitChain network.
-						</Typography>
-					</Grid>
-				</div>
-			</section>
-
-			<section className="section section-b">
-				<div className="container">
 					<Grid container direction="row" justify="center" alignItems="center">
 						<Grid item xs={12}>
 							<Box>
 								<Typography gutterBottom color="primary" variant="h3">
 									Start Earning with FitChain.
 								</Typography>
-								<Button href="/signin" style={styleObj}>
-									
-									<Typography color="inherit" variant="button">
-										Login
-									</Typography>
-								</Button>
+								<Typography color="primary" variant="h6" component="h4">
+									Keep track of common everyday health related data such as exercising or eating meals
+									and receive token rewards.
+								</Typography>
+								<Box py={1}>
+									<img src={logo1} alt="Block Logo" width={'11%'} height={'11%'} mode="fit" />
+								</Box>
 								<Button href="/signup" style={styleObj}>
 									<Typography color="inherit" variant="button">
 										Sign Up
 									</Typography>
 								</Button>
-								<br />
-								<img src={logo1} alt="Block Logo" width={'11%'} height={'11%'} mode="fit" />
-								<Typography color="primary" variant="h7" component="h4">
-									Keep track of common everyday health related data such as exercising or eating meals
-									and receive token rewards.
-								</Typography>
+								<Button href="/signin" style={styleObj}>
+									<Typography color="inherit" variant="button">
+										Login
+									</Typography>
+								</Button>
 							</Box>
 						</Grid>
+					</Grid>
+				</div>
+			</section>
+
+			<section className="section section-b">
+				<div className="container">
+					<Grid>
+						<Typography color="primary" variant="h6" component="h4">
+							FitChain was created to help motivate users into staying active by rewarding the user for
+							posting their health related activities to the FitChain blockchain network with a digital
+							token that is distributed amongst the users of the FitChain network.
+						</Typography>
 					</Grid>
 				</div>
 			</section>
@@ -143,22 +146,29 @@ function About() {
 					<Typography color="primary" variant="h4">
 						FitChain Team
 					</Typography>
-					<Typography color="primary" variant="subtitle" gutterBottom component="h4">
-						Developers
-					</Typography>
-					<Grid container direction="row" justify="center" alignItems="center">
-						<Grid item xs={4}>
+					<Box pt={1}>
+						<Typography color="primary" variant="subtitle" gutterBottom component="h4">
+							Developers
+						</Typography>
+					</Box>
+					<Grid container direction="row" justify="center" alignItems="center" >
+						<Grid item xs={2}>
 							<Box mx="auto">
-								<Typography color="primary" component="p">
+								<Typography style={gitlinks} color="primary" component="p">
 									<Link href="https://haz3141.github.io/" variant="p" color="inherit">
 										Hazael Dominguez
 									</Link>
 								</Typography>
 							</Box>
 						</Grid>
-						<Grid item xs={4}>
+						<Grid item xs={1}>
 							<Box mx="auto">
-								<Typography color="primary" component="p">
+								<GitHubIcon />
+							</Box>
+						</Grid>
+						<Grid item xs={2}>
+							<Box mx="auto">
+								<Typography style={gitlinks} color="primary" component="p">
 									<Link
 										href="https://thomas-white-ucf.github.io/Portfolio"
 										variant="p"

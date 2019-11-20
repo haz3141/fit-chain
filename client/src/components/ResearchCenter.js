@@ -13,7 +13,7 @@ const styles = {
 		marginBottom: "2vh",
     height: "50vh",
     width: "50vh",
-		overflowY: 'auto'
+    overflowY: 'auto'
 	}
 }
 
