@@ -11,7 +11,8 @@ import PropTypes from 'prop-types';
 
 const styles = (theme) => ({
 	body: {
-		height: '100vh'
+		height: '200vh',
+		backgroundColor: '#cfe8fc'
 	}
 });
 
@@ -20,10 +21,6 @@ class Body extends Component {
 		const { classes } = this.props;
 		return (
 			<Fragment>
-				<Grid container direction="row">
-					<Grid item />
-					<Box mt={3} />
-				</Grid>
 				<Grid className={classes.body} container direction="row" justify="center" alignItems="flex-start">
 					<Grid item sm={1} />
 					<Grid container item sm>
@@ -38,10 +35,8 @@ class Body extends Component {
 								</Route>
 								<Route path="/dashboard/profile">
 									<UserActions />
-									<h1>Stay Active! Your blocks are shared with the community</h1>
 								</Route>
 								<Route path="/dashboard/research">
-									<h1>Research new Activities</h1>
 									<Research />
 								</Route>
 							</Switch>

@@ -2,21 +2,13 @@
 import React, { Component, Fragment } from 'react';
 
 // Import Material-UI Components
-import { Typography, Grid } from '@material-ui/core';
+import { Typography, Grid, Box } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-// import CardActions from '@material-ui/core/CardActions';
-// import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 import API from '../utils/API';
-
-// display: 'block',
-// width: '30vw',
-// transitionDuration: '0.3s',
-// height: '45vw'
-// minWidth: "5vh",
 
 const styles = (theme) => ({
 	card: {
@@ -38,25 +30,6 @@ const styles = (theme) => ({
 		fontSize: '1vh'
 	}
 });
-
-// BOX SHADOW NOT IN ViewHeights,
-// bullet: {
-// 	display: 'inline-block',
-// 	margin: '0 2px',
-// 	transform: 'scale(0.8)'
-// },
-// pos: {
-// 	marginBottom: 12
-// },
-// title: {
-// 	fontSize: 24
-// },
-// description: {
-// 	fontSize: 20
-// },
-// timestamp: {
-// 	fontSize: 20
-// },
 
 class UserActions extends Component {
 	state = {
@@ -97,22 +70,15 @@ class UserActions extends Component {
 		const descriptions = activitySet[0].description;
 		const counts = activitySet[0].count;
 		const timestamps = activitySet[0].timestamp;
-		// console.log(timestamps);
-
-		// console.log({activitySet})
-		// let resultTime = timestamps.toDateString
-		// console.log({resultTime})
-		// console.log(activitySet);
-		// console.log(actions);
-		// console.log(timestamps)
-		// timestamp |date:"MMM d, y, HH:mm"
 
 		return (
 			<Fragment>
 				<Grid container direction="row" justify="flex-start" alignItems="flex-start">
-					<Typography variant="h4" gutterBottom>
-						Your Building Blocks
-					</Typography>
+					<Box mt={5}>
+						<Typography variant="h4" gutterBottom>
+							Your Building Blocks
+						</Typography>
+					</Box>
 				</Grid>
 				<Grid container direction="row" justify="flex-start" alignItems="flex-start">
 					{actions.map((action, index) => (

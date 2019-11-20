@@ -22,17 +22,12 @@ const styles = (theme) => ({
 	},
 	container: {
 		height: '3vh'
-		// ,
-		// positionBottom: '0'
 	},
 	appBar: {
 		borderRadius: 10,
 		position: "fixed",
-		// left: "0",
 		bottom: "4vh",
 		width: "25%"
-		// bottom: '0',
-		// position: 'fixed'
 	}
 });
 

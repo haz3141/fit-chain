@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
+import { Typography, Grid, Box } from '@material-ui/core';
+
 // Import Local Component / layouts that exchange info
 import { ResearchFooter } from './ResearchFooter';
 import { ResearchCenter } from './ResearchCenter';
@@ -41,22 +43,26 @@ class Research extends Component {
 		const exercises = this.getExercisesByMuscles();
 		const { category, exercise } = this.state;
 
-        // console.log("Research render >  category = ", category)
+		// console.log("Research render >  category = ", category)
 		return (
 			<Fragment>
+				<Grid container direction="row" justify="flex-start" alignItems="flex-start">
+					<Box mt={5}>
+						<Typography variant="h4" gutterBottom>
+							Research New Activities
+						</Typography>
+					</Box>
+				</Grid>
 				<ResearchCenter
 					exercise={exercise}
 					onSelect={this.handleExerciseSelect}
 					category={category}
 					exercises={exercises}
 				/>
-                <ResearchFooter 
-                category={category} 
-                muscles={muscles} 
-                onSelect={this.handleCategorySelect} />
+				<ResearchFooter category={category} muscles={muscles} onSelect={this.handleCategorySelect} />
 			</Fragment>
 		);
 	}
 }
 
-export default Research ;
+export default Research;
