@@ -62,8 +62,6 @@ class DialogBox extends Component {
 			}
 		};
 
-		axios.post('http://localhost:8080/mine', payload);
-
 		fetch('/api/activity', {
 			method: 'POST',
 			body: JSON.stringify(this.state),
@@ -73,6 +71,8 @@ class DialogBox extends Component {
 		})
 			.then((res) => {
 				if (res) {
+					axios.post('http://localhost:8080/mine', payload);
+					console.log('HERE');
 					this.setState({
 						open: false,
 						activity: {

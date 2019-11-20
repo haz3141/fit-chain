@@ -69,7 +69,13 @@ class SignUp extends Component {
 		})
 			.then((res) => {
 				if (res.status === 200) {
-					this.props.history.push('/dashboard');
+					fetch('/api/authenticate', {
+						method: 'POST',
+						body: JSON.stringify(this.state),
+						headers: {
+							'Content-Type': 'application/json'
+						}
+					}).then(this.props.history.push('/dashboard'));
 				} else {
 					const error = new Error(res.error);
 					throw error;

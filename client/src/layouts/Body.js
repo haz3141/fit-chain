@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import { Grid, Box } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import ActivityCards from '../components/ActivityCards';
 import UserActions from '../components/UserActions';
 import Research from '../components/Research';
@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 
 const styles = (theme) => ({
 	body: {
-		height: '200vh',
+		height: 'inherit',
 		backgroundColor: '#cfe8fc'
 	}
 });
@@ -44,10 +44,10 @@ class Body extends Component {
 					</Grid>
 					<Grid item xs={1} />
 				</Grid>
-				<Grid container direction="row">
+				{/* <Grid container direction="row">
 					<Grid item />
 					<Box mt={3} />
-				</Grid>
+				</Grid> */}
 			</Fragment>
 		);
 	}

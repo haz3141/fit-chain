@@ -21,13 +21,14 @@ const styles = (theme) => ({
 		flexGrow: 1
 	},
 	container: {
-		height: '3vh'
+		height: '3vh',
+		backgroundColor: '#cfe8fc'
 	},
 	appBar: {
 		borderRadius: 10,
 		position: "fixed",
 		bottom: "4vh",
-		width: "25%"
+		width: "25%",
 	}
 });
 
