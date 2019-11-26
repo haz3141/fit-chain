@@ -101,7 +101,7 @@ information about Create React App and it's dependencies consult its
 
 ### External Dependencies
 
-In addition to libraries FitChain also depends on a blockchain node to be running. The [alpha-coin-blockchain](https://github.com/haz3141/fit-chain/)
+In addition to libraries FitChain also depends on a blockchain node to be running. The [alpha-coin-blockchain](https://github.com/haz3141/alpha-coin-blockchain/)
 GitHub repo contains the necessary files to start the local blockchain node.
 
 ## Application Structure
